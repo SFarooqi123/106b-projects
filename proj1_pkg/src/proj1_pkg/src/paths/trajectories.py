@@ -222,13 +222,14 @@ class LinearTrajectory(Trajectory):
         return np.hstack((linear_vel, np.zeros(3)))
 
 class CircularTrajectory(Trajectory):
-    def __init__(self, center_position, radius, total_time):
+    def __init__(self, center_position, radius, total_time, loops = 1):
         Trajectory.__init__(self, total_time)
         self.center_position = center_position
         self.radius = radius
         self.angular_acceleration = (2 * np.pi * 4.0) / (self.total_time ** 2) # keep constant magnitude acceleration
         self.angular_v_max = (self.total_time / 2.0) * self.angular_acceleration # maximum velocity magnitude
         self.desired_orientation = np.array([0, 1, 0, 0])
+        self.loops = loops
 
     def target_pose(self, time):
         """
@@ -250,19 +251,34 @@ class CircularTrajectory(Trajectory):
         7x' :obj:`numpy.ndarray`
             desired configuration in workspace coordinates of the end effector
         """
-        if time <= self.total_time / 2.0:
+
+        #time = (time * self.loops) % self.total_time
+        if time < in 3D space that traces straight lines between points in an arbitrary list of 3 or= self.total_time / 2.0:
             # TODO: calculate the ANGLE of the end effector at time t, 
             # For the first half of the trajectory, maintain a constant acceleration
             
 
             theta = 0.5 * self.angular_acceleration * time**2
+
         else:
             # TODO: Calculate the ANGLE of the end effector at time t, 
             # For the second half of the trajectory, maintain a constant acceleration
             # Hint: Calculate the remaining angle to the goal position. 
 
             time_half = self.total_time / 2.0
-            theta = np.pi + self.angular_v_max*(time-time_half) - 0.5 * self.angular_acceleration * (time - time_half)**2
+            theta = np.pi + self.angular_v_max*(time-time_half) - 0.5 * self.angular_acceleration * (time - time_half)**2 
+
+        #elif time <= self.total_time *.75:
+
+        #     time_half = self.total_time*.75
+        #     theta = np.pi + self.angular_v_max*(time-time_half) - 0.5 * self.angular_acceleration * (time - time_half)**2
+
+
+        # else:
+        #     time_half = self.total_time / 2.0
+        #     theta = np.pi + self.angular_v_max*(time-time_half) - 0.5 * self.angular_acceleration * (time - time_half)**2
+
+
         pos_d = np.ndarray.flatten(self.center_position + self.radius * np.array([np.cos(theta), np.sin(theta), 0]))
         return np.hstack((pos_d, self.desired_orientation))
 
@@ -312,8 +328,15 @@ class PolygonalTrajectory(Trajectory):
         ----------
         ????? You're going to have to fill these in how you see fit
         """
-        pass
-        # Trajectory.__init__(self, total_time)
+        Trajectory.__init__(self, total_time)
+        self.start_position = start_position
+        self.goal_positions = points
+        self.num_points = len(points)
+        self.distance = self.goal_position - self.start_position
+        self.acceleration = (self.distance * 4.0) / (self.total_time ** 2) # keep constant magnitude acceleration
+        self.v_max = (self.total_time / 2.0) * self.acceleration # maximum velocity magnitude
+        self.desired_orientation = np.array([0, 1, 0, 0])
+
 
     def target_pose(self, time):
         """
@@ -333,7 +356,35 @@ class PolygonalTrajectory(Trajectory):
         7x' :obj:`numpy.ndarray`
             desired configuration in workspace coordinates of the end effector
         """
-        pass
+
+        sim_time = time % (self.total_time / num_points + 1)
+        leg = time // (self.total_time / num_points + 1)
+        time_per_point = self.total_time / (num_points + 1)
+        if (leg == 0):
+            self.distance = point[0] - self.start_position
+        else:
+            self.distance = point[leg] - point[leg - 1]
+        
+        self.acceleration = (self.distance * 4.0) / (time_per_point ** 2)
+        
+
+        if sim_time <= time_per_point / 2.0:
+            # TODO: calculate the position of the end effector at time t, 
+            # For the first half of the trajectory, maintain a constant acceleration
+            if (leg == 0):
+                pos =  self.start_position + (1/2)*self.acceleration*sim_time**2
+            else:
+                pos =  points[leg - 1] + (1/2)*self.acceleration*sim_time**2
+        
+        else:
+            # TODO: Calculate the position of the end effector at time t, 
+            # For the second half of the trajectory, maintain a constant acceleration
+            # Hint: Calculate the remaining distance to the goal position. 
+            # pos = ((self.start_position + self.goal_position)/2)+self.v_max*(time-self.total_time/2)-(1/2)*self.acceleration*(time-self.total_time/2)**2
+            if (leg == 0):
+                t_dec = sim_time - time_per_point / 2.0
+                pos = (leg[0] + self.start_position)/2 + self.v_max * t_dec - 0.5 * self.acceleration * (t_dec ** 2)
+
         
     def target_velocity(self, time):
         """
@@ -350,7 +401,26 @@ class PolygonalTrajectory(Trajectory):
         6x' :obj:`numpy.ndarray`
             desired body-frame velocity of the end effector
         """
-        pass
+
+        sim_time = time % (self.total_time / num_points + 1)
+        leg = time // (self.total_time / num_points + 1)
+        time_per_point = self.total_time / (num_points + 1)
+
+        if sim_time <= time_per_point / 2.0:
+            # TODO: calculate velocity using the acceleration and time
+            # For the first half of the trajectory, we maintain a constant acceleration
+
+            
+            linear_vel = self.acceleration*sim_time
+        else:
+            # TODO: start slowing the velocity down from the maximum one
+            # For the second half of the trajectory, maintain a constant deceleration
+
+
+            # linear_vel = self.v_max - self.acceleration * (time-self.total_time/2)
+            t_dec = sim_time - time_per_point / 2.0
+            linear_vel = self.v_max - self.acceleration * t_dec
+        return np.hstack((linear_vel, np.zeros(3)))
 
 def define_trajectories(args):
     """ Define each type of trajectory with the appropriate parameters."""

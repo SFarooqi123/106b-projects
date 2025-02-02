@@ -97,10 +97,19 @@ def get_trajectory(limb, kin, ik_solver, tag_pos, args):
         target_pos = tag_pos[0]
         target_pos[2] += 0.4
         trajectory = LinearTrajectory(start_position=current_position, goal_position=target_pos, total_time=9)
+
     elif task == 'circle':
-        trajectory = CircularTrajectory()
+        target_pos = tag_pos[0]
+        target_pos[2] += 0.5
+        print("TARGET POSITION:", target_pos)
+        trajectory = CircularTrajectory(center_position=target_pos, radius=0.1, total_time=15)
+
+
     elif task == 'polygon':
-        trajectory = PolygonalTrajectory()
+        pos1 = tag_pos + [.1, .1, .4]
+        pos2 = tag_pos + [-.1, .1, .5]
+        pos_3 = tag_pos + [-.1, -.1, .3]
+        trajectory = PolygonalTrajectory([pos1, pos2, pos3])
     else:
         raise ValueError('task {} not recognized'.format(task))
     path = MotionPath(limb, kin, ik_solver, trajectory)
@@ -141,6 +150,7 @@ def get_controller(controller_name, limb, kin):
 
 
 def main():
+
     """
     Examples of how to run me:
     python scripts/main.py --help <------This prints out all the help messages
