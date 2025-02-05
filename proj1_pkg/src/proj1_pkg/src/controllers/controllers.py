@@ -12,6 +12,9 @@ import itertools
 import matplotlib
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
+from trac_ik_python.trac_ik import IK
+from sawyer_pykdl import sawyer_kinematics
+
 
 # Lab imports
 from utils.utils import *
@@ -74,7 +77,7 @@ class Controller:
         positions, velocities, and accelerations at a specified time
 
         Parameters
-        ----------
+        ----------intera_interface/
         path : :obj:`moveit_msgs.msg.RobotTrajectory`
         t : float
             the time from start
@@ -387,7 +390,7 @@ class Controller:
             )
         return True
 
-    def follow_ar_tag(self, tag, rate=200, timeout=None, log=False):
+    def follow_ar_tag(self, args, tag, rate=200, timeout=None, log=False):
         """
         takes in an AR tag number and follows it with the baxter's arm.  You 
         should look at execute_path() for inspiration on how to write this. 
@@ -412,7 +415,78 @@ class Controller:
         bool
             whether the controller completes the path or not
         """
-        raise NotImplementedError
+        # For plotting
+        ik_solver = IK("base", "right_hand")
+        limb = intera_interface.Limb('right')
+
+        kin = sawyer_kinematics('right')
+        tag_pos = lookup_tag(tag)
+
+        path = get_trajectory(limb, kin, ik_solver, tag_pos, args)
+
+        if log:
+            times = list()
+            actual_positions = list()
+            actual_velocities = list()
+            target_positions = list()
+            target_velocities = list()
+
+        # For interpolation
+        max_index = len(path.joint_trajectory.points)-1
+        current_index = 0
+
+        # For timing
+        start_t = rospy.Time.now()
+        r = rospy.Rate(rate)
+
+        while not rospy.is_shutdown():
+            # Find the time from start
+            t = (rospy.Time.now() - start_t).to_sec()
+
+            # If the controller has timed out, stop moving and return false
+            if timeout is not None and t >= timeout:
+                # Set velocities to zero
+                self.stop_moving()
+                return False
+
+            current_position = get_joint_positions(self._limb)
+            current_velocity = get_joint_velocities(self._limb)
+
+            # Get the desired position, velocity, and effort
+            (
+                target_position, 
+                target_velocity, 
+                target_acceleration, 
+                current_index
+            ) = self.interpolate_path(path, t, current_index)
+
+            # For plotting
+            if log:
+                times.append(t)
+                actual_positions.append(current_position)
+                actual_velocities.append(current_velocity)
+                target_positions.append(target_position)
+                target_velocities.append(target_velocity)
+
+            # Run controller
+            self.step_control(target_position, target_velocity, target_acceleration)
+
+            # Sleep for a bit (to let robot move)
+            r.sleep()
+
+            if current_index >= max_index:
+                self.stop_moving()
+                break
+
+        if log:
+            self.plot_results(
+                times,
+                actual_positions, 
+                actual_velocities, 
+                target_positions, 
+                target_velocities
+            )
+        return True
 
 class FeedforwardJointVelocityController(Controller):
     def step_control(self, target_position, target_velocity, target_acceleration):

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/src
+CMAKE_SOURCE_DIR = /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/build
+CMAKE_BINARY_DIR = /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/build
 
 # Utility rule file for std_srvs_generate_messages_cpp.
 
@@ -63,10 +63,10 @@ usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/build: std_srvs_generate_m
 .PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
 
 usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/build/usb_cam && $(CMAKE_COMMAND) -P CMakeFiles/std_srvs_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/build/usb_cam && $(CMAKE_COMMAND) -P CMakeFiles/std_srvs_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean
 
 usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/depend:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/src /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/src/usb_cam /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/build /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/build/usb_cam /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/build/usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/src /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/src/usb_cam /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/build /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/build/usb_cam /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/build/usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/depend
 

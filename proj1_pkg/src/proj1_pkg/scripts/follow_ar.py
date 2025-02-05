@@ -77,8 +77,8 @@ def get_controller(controller_name, limb, kin):
         controller = WorkspaceVelocityController(limb, kin, Kp, Kv)
     elif controller_name == 'jointspace':
         # YOUR CODE HERE
-        Kp = None
-        Kv = None
+        Kp = 0.2 * np.array([1, 2, 1.7, 1.5, 2, 2, 3])
+        Kv = 0.02 * np.array([2, 1, 1, 0.5, 0.2, 0.8, 0.8])
         controller = PDJointVelocityController(limb, kin, Kp, Kv)
     elif controller_name == 'torque':
         # YOUR CODE HERE
@@ -136,8 +136,9 @@ if __name__ == "__main__":
         sys.exit()
     controller.follow_ar_tag(
         int(args.ar_marker), 
+        args,
         rate=args.rate, 
         timeout=args.timeout, 
-        log=args.log
+        log=args.log,
     )
     

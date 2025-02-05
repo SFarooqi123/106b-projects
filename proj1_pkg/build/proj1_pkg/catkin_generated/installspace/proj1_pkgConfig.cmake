@@ -67,14 +67,14 @@ set(proj1_pkg_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(proj1_pkg_SOURCE_PREFIX /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/src/proj1_pkg)
-  set(proj1_pkg_DEVEL_PREFIX /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/devel)
+  set(proj1_pkg_SOURCE_PREFIX /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/src/proj1_pkg)
+  set(proj1_pkg_DEVEL_PREFIX /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/devel)
   set(proj1_pkg_INSTALL_PREFIX "")
   set(proj1_pkg_PREFIX ${proj1_pkg_DEVEL_PREFIX})
 else()
   set(proj1_pkg_SOURCE_PREFIX "")
   set(proj1_pkg_DEVEL_PREFIX "")
-  set(proj1_pkg_INSTALL_PREFIX /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/install)
+  set(proj1_pkg_INSTALL_PREFIX /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/install)
   set(proj1_pkg_PREFIX ${proj1_pkg_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/install/lib;/home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/devel/lib;/opt/ros/eecsbot_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/install/lib;/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/devel/lib;/opt/ros/eecsbot_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

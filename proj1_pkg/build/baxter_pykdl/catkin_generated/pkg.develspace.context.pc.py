@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "rospy;geometry_msgs;sensor_msgs;urdfdom;tf;baxter_interface;baxter_core_msgs;intera_core_msgs;intera_interface".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "baxter_pykdl"
-PROJECT_SPACE_DIR = "/home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/devel"
+PROJECT_SPACE_DIR = "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/devel"
 PROJECT_VERSION = "0.1.0"

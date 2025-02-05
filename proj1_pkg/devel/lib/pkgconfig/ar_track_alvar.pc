@@ -1,8 +1,8 @@
-prefix=/home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/devel
+prefix=/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/devel
 
 Name: ar_track_alvar
 Description: Description of ar_track_alvar
 Version: 0.7.1
-Cflags: -I/home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/devel/include -I/home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/src/ar_track_alvar/ar_track_alvar/include
+Cflags: -I/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/devel/include -I/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/src/ar_track_alvar/ar_track_alvar/include
 Libs: -L${prefix}/lib -lar_track_alvar
 Requires: ar_track_alvar_msgs cv_bridge dynamic_reconfigure geometry_msgs image_transport message_runtime pcl_conversions pcl_ros resource_retriever roscpp sensor_msgs std_msgs tf tf2 visualization_msgs

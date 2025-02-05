@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/src
+CMAKE_SOURCE_DIR = /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/build
+CMAKE_BINARY_DIR = /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/build
 
 # Utility rule file for trajectory_msgs_generate_messages_lisp.
 
@@ -63,10 +63,10 @@ baxter_pykdl/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build: trajec
 .PHONY : baxter_pykdl/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
 
 baxter_pykdl/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/clean:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/build/baxter_pykdl && $(CMAKE_COMMAND) -P CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/build/baxter_pykdl && $(CMAKE_COMMAND) -P CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : baxter_pykdl/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/clean
 
 baxter_pykdl/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/depend:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/src /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/src/baxter_pykdl /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/build /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/build/baxter_pykdl /home/cc/ee106b/sp25/class/ee106b-aan/ee106b_workspace/106b-projects/proj1_pkg/build/baxter_pykdl/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/src /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/src/baxter_pykdl /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/build /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/build/baxter_pykdl /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proj1_pkg/build/baxter_pykdl/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : baxter_pykdl/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/depend
 

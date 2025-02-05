@@ -253,7 +253,7 @@ class CircularTrajectory(Trajectory):
         """
 
         #time = (time * self.loops) % self.total_time
-        if time < in 3D space that traces straight lines between points in an arbitrary list of 3 or= self.total_time / 2.0:
+        if time < self.total_time / 2.0:
             # TODO: calculate the ANGLE of the end effector at time t, 
             # For the first half of the trajectory, maintain a constant acceleration
             
