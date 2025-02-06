@@ -101,13 +101,16 @@ if __name__ == "__main__":
     You can also change the rate, timeout if you want
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument('-ar_marker', '-ar', type=float, default=1, help=
+    parser.add_argument('-task', '-t', type=str, default='line', help=
+        'Which AR marker to use.  Default: 1'
+    )
+    parser.add_argument('-ar_marker', '-ar', nargs='+', help=
         'Which AR marker to use.  Default: 1'
     )
     parser.add_argument('-controller_name', '-c', type=str, default='workspace', 
         help='Options: workspace, jointspace, or torque.  Default: workspace'
     )
-    parser.add_argument('-arm', '-a', type=str, default='left', help=
+    parser.add_argument('-arm', '-a', type=str, default='right', help=
         'Options: left, right.  Default: left'
     )
     parser.add_argument('-rate', type=int, default=200, help="""
@@ -121,6 +124,9 @@ if __name__ == "__main__":
         Default: None"""
     )
     parser.add_argument('--log', action='store_true', help='plots controller performance')
+    parser.add_argument('-num_way', type=int, default=300, help=
+        'How many waypoints for the :obj:`moveit_msgs.msg.RobotTrajectory`.  Default: 300'
+    )
     args = parser.parse_args()
 
     rospy.init_node('moveit_node')
@@ -135,7 +141,7 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         sys.exit()
     controller.follow_ar_tag(
-        int(args.ar_marker), 
+        int(11), 
         args,
         rate=args.rate, 
         timeout=args.timeout, 

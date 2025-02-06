@@ -14,10 +14,9 @@ matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 from trac_ik_python.trac_ik import IK
 from sawyer_pykdl import sawyer_kinematics
-
-
 # Lab imports
 from utils.utils import *
+from trajectories import Trajectory, LinearTrajectory
 
 # ROS imports
 try:
@@ -32,6 +31,546 @@ except:
     pass
 
 NUM_JOINTS = 7
+
+#!/usr/bin/env/python
+
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+import argparse
+from paths.paths import MotionPath
+
+"""
+Set of classes for defining SE(3) trajectories for the end effector of a robot 
+manipulator
+"""
+
+class Trajectory:
+
+    def __init__(self, total_time):
+        """
+        Parameters
+        ----------
+        total_time : float
+            desired duration of the trajectory in seconds 
+        """
+        self.total_time = total_time
+
+    def target_pose(self, time):
+        """
+        Returns where the arm end effector should be at time t, in the form of a 
+        7D vector [x, y, z, qx, qy, qz, qw]. i.e. the first three entries are 
+        the desired end-effector position, and the last four entries are the 
+        desired end-effector orientation as a quaternion, all written in the 
+        world frame.
+        Hint: The end-effector pose with the gripper pointing down corresponds 
+        to the quaternion [0, 1, 0, 0]. 
+        Parameters
+        ----------
+        time : float        
+    
+        Returns
+        -------
+        7x' :obj:`numpy.ndarray`
+            desired configuration in workspace coordinates of the end effector
+        """
+        pass
+
+    def target_velocity(self, time):
+        """
+        Returns the end effector's desired body-frame velocity at time t as a 6D
+        twist. Note that this needs to be a rigid-body velocity, i.e. a member 
+        of se(3) expressed as a 6D vector.
+        The function get_g_matrix from utils may be useful to perform some frame
+        transformations.
+        Parameters
+        ----------
+        time : float
+        Returns
+        -------
+        6x' :obj:`numpy.ndarray`
+            desired body-frame velocity of the end effector
+        """
+        pass
+
+    def display_trajectory(self, num_waypoints=67, show_animation=False, save_animation=False):
+        """
+        Displays the evolution of the trajectory's position and body velocity.
+        Parameters
+        ----------
+        num_waypoints : int
+            number of waypoints in the trajectory
+        show_animation : bool
+            if True, displays the animated trajectory
+        save_animatioon : bool
+            if True, saves a gif of the animated trajectory
+        """
+        trajectory_name = self.__class__.__name__
+        times = np.linspace(0, self.total_time, num=num_waypoints)
+        target_positions = np.vstack([self.target_pose(t)[:3] for t in times])
+        target_velocities = np.vstack([self.target_velocity(t)[:3] for t in times])
+        
+        fig = plt.figure(figsize=plt.figaspect(0.5))
+        colormap = plt.cm.brg(np.fmod(np.linspace(0, 1, num=num_waypoints), 1))
+
+        # Position plot
+        ax0 = fig.add_subplot(1, 2, 1, projection='3d')
+        pos_padding = [[-0.1, 0.1],
+                        [-0.1, 0.1],
+                        [-0.1, 0.1]]
+        ax0.set_xlim3d([min(target_positions[:, 0]) + pos_padding[0][0], 
+                        max(target_positions[:, 0]) + pos_padding[0][1]])
+        ax0.set_xlabel('X')
+        ax0.set_ylim3d([min(target_positions[:, 1]) + pos_padding[1][0], 
+                        max(target_positions[:, 1]) + pos_padding[1][1]])
+        ax0.set_ylabel('Y')
+        ax0.set_zlim3d([min(target_positions[:, 2]) + pos_padding[2][0], 
+                        max(target_positions[:, 2]) + pos_padding[2][1]])
+        ax0.set_zlabel('Z')
+        ax0.set_title("%s evolution of\nend-effector's position." % trajectory_name)
+        line0 = ax0.scatter(target_positions[:, 0], 
+                        target_positions[:, 1], 
+                        target_positions[:, 2], 
+                        c=colormap,
+                        s=2)
+
+        # Velocity plot
+        ax1 = fig.add_subplot(1, 2, 2, projection='3d')
+        vel_padding = [[-0.1, 0.1],
+                        [-0.1, 0.1],
+                        [-0.1, 0.1]]
+        ax1.set_xlim3d([min(target_velocities[:, 0]) + vel_padding[0][0], 
+                        max(target_velocities[:, 0]) + vel_padding[0][1]])
+        ax1.set_xlabel('X')
+        ax1.set_ylim3d([min(target_velocities[:, 1]) + vel_padding[1][0], 
+                        max(target_velocities[:, 1]) + vel_padding[1][1]])
+        ax1.set_ylabel('Y')
+        ax1.set_zlim3d([min(target_velocities[:, 2]) + vel_padding[2][0], 
+                        max(target_velocities[:, 2]) + vel_padding[2][1]])
+        ax1.set_zlabel('Z')
+        ax1.set_title("%s evolution of\nend-effector's translational body-frame velocity." % trajectory_name)
+        line1 = ax1.scatter(target_velocities[:, 0], 
+                        target_velocities[:, 1], 
+                        target_velocities[:, 2], 
+                        c=colormap,
+                        s=2)
+
+        if show_animation or save_animation:
+            def func(num, line):
+                line[0]._offsets3d = target_positions[:num].T
+                line[0]._facecolors = colormap[:num]
+                line[1]._offsets3d = target_velocities[:num].T
+                line[1]._facecolors = colormap[:num]
+                return line
+
+            # Creating the Animation object
+            line_ani = animation.FuncAnimation(fig, func, frames=num_waypoints, 
+                                                          fargs=([line0, line1],), 
+                                                          interval=max(1, int(1000 * self.total_time / (num_waypoints - 1))), 
+                                                          blit=False)
+        plt.show()
+        if save_animation:
+            line_ani.save('%s.gif' % trajectory_name, writer='pillow', fps=60)
+            print("Saved animation to %s.gif" % trajectory_name)
+
+class LinearTrajectory(Trajectory):
+
+    def __init__(self, start_position, goal_position, total_time):
+
+        Trajectory.__init__(self, total_time)
+        self.start_position = start_position
+        self.goal_position = goal_position
+        self.distance = self.goal_position - self.start_position
+        self.acceleration = (self.distance * 4.0) / (self.total_time ** 2) # keep constant magnitude acceleration
+        self.v_max = (self.total_time / 2.0) * self.acceleration # maximum velocity magnitude
+        self.desired_orientation = np.array([-(2**.5)/2, (2**.5)/2, 0, 0])
+
+    def target_pose(self, time):
+        """
+        Returns where the arm end effector should be at time t, in the form of a 
+        7D vector [x, y, z, qx, qy, qz, qw]. i.e. the first three entries are 
+        the desired end-effector position, and the last four entries are the 
+        desired end-effector orientation as a quaternion, all written in the 
+        world frame.
+
+        Hint: The end-effector pose with the gripper pointing down corresponds 
+        to the quaternion [0, 1, 0, 0]. 
+
+        Parameters
+        ----------
+        time : float        
+    
+        Returns
+        -------
+        7x' :obj:`numpy.ndarray`
+            desired configuration in workspace coordinates of the end effector
+        """
+        if time <= self.total_time / 2.0:
+            # TODO: calculate the position of the end effector at time t, 
+            # For the first half of the trajectory, maintain a constant acceleration
+            pos =  self.start_position + (1/2)*self.acceleration*time**2
+        else:
+            # TODO: Calculate the position of the end effector at time t, 
+            # For the second half of the trajectory, maintain a constant acceleration
+            # Hint: Calculate the remaining distance to the goal position. 
+
+            # pos = ((self.start_position + self.goal_position)/2)+self.v_max*(time-self.total_time/2)-(1/2)*self.acceleration*(time-self.total_time/2)**2
+            t_dec = time - self.total_time / 2.0
+            pos = (self.goal_position + self.start_position)/2 + self.v_max * t_dec - 0.5 * self.acceleration * (t_dec ** 2)
+
+
+
+        return np.hstack((pos, self.desired_orientation))
+
+    def target_velocity(self, time):
+        """
+        Returns the end effector's desired body-frame velocity at time t as a 6D
+        twist. Note that this needs to be a rigid-body velocity, i.e. a member 
+        of se(3) expressed as a 6D vector.
+
+        The function get_g_matrix from utils may be useful to perform some frame
+        transformations.
+
+        Parameters
+        ----------
+        time : float
+
+        Returns
+        -------
+        6x' :obj:`numpy.ndarray`
+            desired body-frame velocity of the end effector
+        """
+        if time <= self.total_time / 2.0:
+            # TODO: calculate velocity using the acceleration and time
+            # For the first half of the trajectory, we maintain a constant acceleration
+
+            
+            linear_vel = self.acceleration*time
+        else:
+            # TODO: start slowing the velocity down from the maximum one
+            # For the second half of the trajectory, maintain a constant deceleration
+
+
+            # linear_vel = self.v_max - self.acceleration * (time-self.total_time/2)
+            t_dec = time - self.total_time / 2.0
+            linear_vel = self.v_max - self.acceleration * t_dec
+        return np.hstack((linear_vel, np.zeros(3)))
+
+class CircularTrajectory(Trajectory):
+    def __init__(self, center_position, radius, total_time, loops = 1):
+        Trajectory.__init__(self, total_time)
+        self.center_position = center_position
+        self.radius = radius
+        self.angular_acceleration = (2 * np.pi * 4.0) / (self.total_time ** 2) # keep constant magnitude acceleration
+        self.angular_v_max = (self.total_time / 2.0) * self.angular_acceleration # maximum velocity magnitude
+        self.desired_orientation = np.array([0, 1, 0, 0])
+        self.loops = loops
+
+    def target_pose(self, time):
+        """
+        Returns where the arm end effector should be at time t, in the form of a 
+        7D vector [x, y, z, qx, qy, qz, qw]. i.e. the first three entries are 
+        the desired end-effector position, and the last four entries are the 
+        desired end-effector orientation as a quaternion, all written in the 
+        world frame.
+
+        Hint: The end-effector pose with the gripper pointing down corresponds 
+        to the quaternion [0, 1, 0, 0]. 
+
+        Parameters
+        ----------
+        time : float        
+    
+        Returns
+        -------
+        7x' :obj:`numpy.ndarray`
+            desired configuration in workspace coordinates of the end effector
+        """
+
+        #time = (time * self.loops) % self.total_time
+        if time < self.total_time / 2.0:
+            # TODO: calculate the ANGLE of the end effector at time t, 
+            # For the first half of the trajectory, maintain a constant acceleration
+            
+
+            theta = 0.5 * self.angular_acceleration * time**2
+
+        else:
+            # TODO: Calculate the ANGLE of the end effector at time t, 
+            # For the second half of the trajectory, maintain a constant acceleration
+            # Hint: Calculate the remaining angle to the goal position. 
+
+            time_half = self.total_time / 2.0
+            theta = np.pi + self.angular_v_max*(time-time_half) - 0.5 * self.angular_acceleration * (time - time_half)**2 
+
+        #elif time <= self.total_time *.75:
+
+        #     time_half = self.total_time*.75
+        #     theta = np.pi + self.angular_v_max*(time-time_half) - 0.5 * self.angular_acceleration * (time - time_half)**2
+
+
+        # else:
+        #     time_half = self.total_time / 2.0
+        #     theta = np.pi + self.angular_v_max*(time-time_half) - 0.5 * self.angular_acceleration * (time - time_half)**2
+
+
+        pos_d = np.ndarray.flatten(self.center_position + self.radius * np.array([np.cos(theta), np.sin(theta), 0]))
+        return np.hstack((pos_d, self.desired_orientation))
+
+
+    def target_velocity(self, time):
+        """
+        Returns the end effector's desired body-frame velocity at time t as a 6D
+        twist. Note that this needs to be a rigid-body velocity, i.e. a member 
+        of se(3) expressed as a 6D vector.
+
+        The function get_g_matrix from utils may be useful to perform some frame
+        transformations.
+
+        Parameters
+        ----------
+        time : float
+
+        Returns
+        -------
+        6x' :obj:`numpy.ndarray`
+            desired body-frame velocity of the end effector
+        """
+        if time <= self.total_time / 2.0:
+            # TODO: calculate ANGULAR position and velocity using the acceleration and time
+            # For the first half of the trajectory, we maintain a constant acceleration
+
+
+            theta = 0.5 * self.angular_acceleration * time**2
+            theta_dot = self.angular_acceleration * time 
+    
+        else:
+            # TODO: start slowing the ANGULAR velocity down from the maximum one
+            # For the second half of the trajectory, maintain a constant deceleration
+            
+            time_half = self.total_time / 2.0
+            theta = np.pi + self.angular_v_max*(time-time_half) - 0.5 * self.angular_acceleration * (time - time_half)**2
+            theta_dot = self.angular_v_max - self.angular_acceleration * (time - time_half)
+        vel_d = np.ndarray.flatten(self.radius * theta_dot * np.array([-np.sin(theta), np.cos(theta), 0]))
+        return np.hstack((vel_d, np.zeros(3)))
+
+class PolygonalTrajectory(Trajectory):
+    def __init__(self, points, total_time):
+        """
+        Remember to call the constructor of Trajectory.
+        You may wish to reuse other trajectories previously defined in this file.
+        Parameters
+        ----------
+        ????? You're going to have to fill these in how you see fit
+        """
+        Trajectory.__init__(self, total_time)
+        self.start_position = start_position
+        self.goal_positions = points
+        self.num_points = len(points)
+        self.distance = self.goal_position - self.start_position
+        self.acceleration = (self.distance * 4.0) / (self.total_time ** 2) # keep constant magnitude acceleration
+        self.v_max = (self.total_time / 2.0) * self.acceleration # maximum velocity magnitude
+        self.desired_orientation = np.array([0, 1, 0, 0])
+
+
+    def target_pose(self, time):
+        """
+        Returns where the arm end effector should be at time t, in the form of a 
+        7D vector [x, y, z, qx, qy, qz, qw]. i.e. the first three entries are 
+        the desired end-effector position, and the last four entries are the 
+        desired end-effector orientation as a quaternion, all written in the 
+        world frame.
+        Hint: The end-effector pose with the gripper pointing down corresponds 
+        to the quaternion [0, 1, 0, 0]. 
+        Parameters
+        ----------
+        time : float        
+    
+        Returns
+        -------
+        7x' :obj:`numpy.ndarray`
+            desired configuration in workspace coordinates of the end effector
+        """
+
+        sim_time = time % (self.total_time / num_points + 1)
+        leg = time // (self.total_time / num_points + 1)
+        time_per_point = self.total_time / (num_points + 1)
+        if (leg == 0):
+            self.distance = point[0] - self.start_position
+        else:
+            self.distance = point[leg] - point[leg - 1]
+        
+        self.acceleration = (self.distance * 4.0) / (time_per_point ** 2)
+        
+
+        if sim_time <= time_per_point / 2.0:
+            # TODO: calculate the position of the end effector at time t, 
+            # For the first half of the trajectory, maintain a constant acceleration
+            if (leg == 0):
+                pos =  self.start_position + (1/2)*self.acceleration*sim_time**2
+            else:
+                pos =  points[leg - 1] + (1/2)*self.acceleration*sim_time**2
+        
+        else:
+            # TODO: Calculate the position of the end effector at time t, 
+            # For the second half of the trajectory, maintain a constant acceleration
+            # Hint: Calculate the remaining distance to the goal position. 
+            # pos = ((self.start_position + self.goal_position)/2)+self.v_max*(time-self.total_time/2)-(1/2)*self.acceleration*(time-self.total_time/2)**2
+            if (leg == 0):
+                t_dec = sim_time - time_per_point / 2.0
+                pos = (leg[0] + self.start_position)/2 + self.v_max * t_dec - 0.5 * self.acceleration * (t_dec ** 2)
+
+        
+    def target_velocity(self, time):
+        """
+        Returns the end effector's desired body-frame velocity at time t as a 6D
+        twist. Note that this needs to be a rigid-body velocity, i.e. a member 
+        of se(3) expressed as a 6D vector.
+        The function get_g_matrix from utils may be useful to perform some frame
+        transformations.
+        Parameters
+        ----------
+        time : float
+        Returns
+        -------
+        6x' :obj:`numpy.ndarray`
+            desired body-frame velocity of the end effector
+        """
+
+        sim_time = time % (self.total_time / num_points + 1)
+        leg = time // (self.total_time / num_points + 1)
+        time_per_point = self.total_time / (num_points + 1)
+
+        if sim_time <= time_per_point / 2.0:
+            # TODO: calculate velocity using the acceleration and time
+            # For the first half of the trajectory, we maintain a constant acceleration
+
+            
+            linear_vel = self.acceleration*sim_time
+        else:
+            # TODO: start slowing the velocity down from the maximum one
+            # For the second half of the trajectory, maintain a constant deceleration
+
+
+            # linear_vel = self.v_max - self.acceleration * (time-self.total_time/2)
+            t_dec = sim_time - time_per_point / 2.0
+            linear_vel = self.v_max - self.acceleration * t_dec
+        return np.hstack((linear_vel, np.zeros(3)))
+
+def define_trajectories(args):
+    """ Define each type of trajectory with the appropriate parameters."""
+    trajectory = None
+    if args.task == 'line':
+        trajectory = LinearTrajectory()
+    elif args.task == 'circle':
+        trajectory = CircularTrajectory()
+    elif args.task == 'polygon':
+        trajectory = PolygonalTrajectory()
+    return trajectory
+
+if __name__ == '__main__':
+    """
+    Run this file to visualize plots of your paths. Note: the provided function
+    only visualizes the end effector position, not its orientation. Use the 
+    animate function to visualize the full trajectory in a 3D plot.
+    """
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-task', '-t', type=str, default='line', help=
+        'Options: line, circle, polygon.  Default: line'
+    )
+    parser.add_argument('--animate', action='store_true', help=
+        'If you set this flag, the animated trajectory will be shown.'
+    )
+    args = parser.parse_args()
+
+    trajectory = define_trajectories(args)
+    
+    if trajectory:
+        trajectory.display_trajectory(show_animation=args.animate)
+def lookup_tag(tag_number):
+    """
+    Given an AR tag number, this returns the position of the AR tag in the robot's base frame.
+    You can use either this function or try starting the scripts/tag_pub.py script.  More info
+    about that script is in that file.  
+
+    Parameters
+    ----------
+    tag_number : int
+
+    Returns
+    -------
+    3x' :obj:`numpy.ndarray`
+        tag position
+    """
+
+    tfBuffer = tf2_ros.Buffer()
+    listener = tf2_ros.TransformListener(tfBuffer)
+
+    to_frame = 'ar_marker_{}'.format(tag_number)
+
+    try:
+        trans = tfBuffer.lookup_transform('base', to_frame, rospy.Time(0), rospy.Duration(10.0))
+    except Exception as e:
+        print(e)
+        print("Retrying ...")
+
+    tag_pos = [getattr(trans.transform.translation, dim) for dim in ('x', 'y', 'z')]
+    return np.array(tag_pos)
+
+def get_trajectory(limb, kin, ik_solver, tag_pos, args):
+    """
+    Returns an appropriate robot trajectory for the specified task.  You should 
+    be implementing the path functions in paths.py and call them here
+    
+    Parameters
+    ----------
+    task : string
+        name of the task.  Options: line, circle, square
+    tag_pos : 3x' :obj:`numpy.ndarray`
+        
+    Returns
+    -------
+    :obj:`moveit_msgs.msg.RobotTrajectory`
+    """
+
+    num_way = args.num_way
+    controller_name = args.controller_name
+    task = args.task
+
+    # target_position = tag_pos[0]
+    tfBuffer = tf2_ros.Buffer()
+    listener = tf2_ros.TransformListener(tfBuffer)
+
+    try:
+        # trans = tfBuffer.lookup_transform('base', 'stp_022412TP99883_base', rospy.Time(0), rospy.Duration(10.0))
+        trans = tfBuffer.lookup_transform('base', 'right_gripper_base', rospy.Time(0), rospy.Duration(10.0))
+    except Exception as e:
+        print(e)
+
+    current_position = np.array([getattr(trans.transform.translation, dim) for dim in ('x', 'y', 'z')])
+    print("Current Position:", current_position)
+    print(task)
+    if task == 'line':
+        target_pos = tag_pos[0]
+        target_pos[2] += 0.6
+        trajectory = LinearTrajectory(start_position=current_position, goal_position=target_pos, total_time=9)
+
+    elif task == 'circle':
+        target_pos = tag_pos[0]
+        target_pos[2] += 0.5
+        print("TARGET POSITION:", target_pos)
+        trajectory = CircularTrajectory(center_position=target_pos, radius=0.1, total_time=15)
+
+
+    elif task == 'polygon':
+        pos1 = tag_pos + [.1, .1, .4]
+        pos2 = tag_pos + [-.1, .1, .5]
+        pos_3 = tag_pos + [-.1, -.1, .3]
+        trajectory = PolygonalTrajectory([pos1, pos2, pos3])
+    else:
+        raise ValueError('task {} not recognized'.format(task))
+    path = MotionPath(limb, kin, ik_solver, trajectory)
+    return path.to_robot_trajectory(num_way, controller_name!='workspace')
 
 class Controller:
 
@@ -390,7 +929,7 @@ class Controller:
             )
         return True
 
-    def follow_ar_tag(self, args, tag, rate=200, timeout=None, log=False):
+    def follow_ar_tag(self, tag, args, rate=200, timeout=None, log=False):
         """
         takes in an AR tag number and follows it with the baxter's arm.  You 
         should look at execute_path() for inspiration on how to write this. 
@@ -398,33 +937,7 @@ class Controller:
         Parameters
         ----------
         tag : int
-            which AR tag to use
-        rate : int
-            This specifies how many ms between loops.  It is important to
-            use a rate and not a regular while loop because you want the
-            loop to refresh at a constant rate, otherwise you would have to
-            tune your PD parameters if the loop runs slower / faster
-        timeout : int
-            If you want the controller to terminate after a certain number
-            of seconds, specify a timeout in seconds.
-        log : bool
-            whether or not to display a plot of the controller performance
-
-        Returns
-        -------
-        bool
-            whether the controller completes the path or not
-        """
-        # For plotting
-        ik_solver = IK("base", "right_hand")
-        limb = intera_interface.Limb('right')
-
-        kin = sawyer_kinematics('right')
-        tag_pos = lookup_tag(tag)
-
-        path = get_trajectory(limb, kin, ik_solver, tag_pos, args)
-
-        if log:
+            which AR tag to useif log:
             times = list()
             actual_positions = list()
             actual_velocities = list()
@@ -487,6 +1000,37 @@ class Controller:
                 target_velocities
             )
         return True
+        rate : int
+            This specifies how many ms between loops.  It is important to
+            use a rate and not a regular while loop b
+        ecause you want the
+            loop to refresh at a constant rate, otherwise you would have to
+            tune your PD parameters if the loop runs slower / faster
+        timeout : int
+            If you want the controller to terminate after a certain number
+            of seconds, specify a timeout in seconds.
+        log : bool
+            whether or not to display a plot of the controller performanceget_trajectory
+
+        Returns
+        -------
+        bool
+            whether the controller completes the path or not
+        """
+        # For plotting
+        ik_solver = IK("base", "right_hand")
+        limb = intera_interface.Limb('right')
+
+        kin = sawyer_kinematics('right')
+
+        print(tag)
+        tag_pos = [lookup_tag(marker) for marker in args.ar_marker]
+
+        
+
+        path = get_trajectory(limb, kin, ik_solver, tag_pos, args)
+
+        self.execute_path(path, rate, timeout, log)
 
 class FeedforwardJointVelocityController(Controller):
     def step_control(self, target_position, target_velocity, target_acceleration):

@@ -86,8 +86,8 @@ def get_trajectory(limb, kin, ik_solver, tag_pos, args):
     listener = tf2_ros.TransformListener(tfBuffer)
 
     try:
-        trans = tfBuffer.lookup_transform('base', 'stp_022412TP99883_base', rospy.Time(0), rospy.Duration(10.0))
-        # trans = tfBuffer.lookup_transform('base', 'right_gripper_base', rospy.Time(0), rospy.Duration(10.0))
+        # trans = tfBuffer.lookup_transform('base', 'stp_022412TP99883_base', rospy.Time(0), rospy.Duration(10.0))
+        trans = tfBuffer.lookup_transform('base', 'right_gripper_base', rospy.Time(0), rospy.Duration(10.0))
     except Exception as e:
         print(e)
 
