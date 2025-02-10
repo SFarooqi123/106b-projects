@@ -124,7 +124,7 @@ if __name__ == "__main__":
         Default: None"""
     )
     parser.add_argument('--log', action='store_true', help='plots controller performance')
-    parser.add_argument('-num_way', type=int, default=300, help=
+    parser.add_argument('-num_way', type=int, default=50, help=
         'How many waypoints for the :obj:`moveit_msgs.msg.RobotTrajectory`.  Default: 300'
     )
     args = parser.parse_args()

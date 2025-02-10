@@ -17,6 +17,7 @@ from sawyer_pykdl import sawyer_kinematics
 # Lab imports
 from utils.utils import *
 from trajectories import Trajectory, LinearTrajectory
+import time
 
 # ROS imports
 try:
@@ -93,7 +94,7 @@ class Trajectory:
         """
         pass
 
-    def display_trajectory(self, num_waypoints=67, show_animation=False, save_animation=False):
+    def display_trajectory(self, num_waypoints=20, show_animation=False, save_animation=False):
         """
         Displays the evolution of the trajectory's position and body velocity.
         Parameters
@@ -183,7 +184,7 @@ class LinearTrajectory(Trajectory):
         self.distance = self.goal_position - self.start_position
         self.acceleration = (self.distance * 4.0) / (self.total_time ** 2) # keep constant magnitude acceleration
         self.v_max = (self.total_time / 2.0) * self.acceleration # maximum velocity magnitude
-        self.desired_orientation = np.array([-(2**.5)/2, (2**.5)/2, 0, 0])
+        self.desired_orientation = np.array([0, 1, 0, 0])
 
     def target_pose(self, time):
         """
@@ -552,8 +553,8 @@ def get_trajectory(limb, kin, ik_solver, tag_pos, args):
     print(task)
     if task == 'line':
         target_pos = tag_pos[0]
-        target_pos[2] += 0.6
-        trajectory = LinearTrajectory(start_position=current_position, goal_position=target_pos, total_time=9)
+        target_pos[2] += 0.5
+        trajectory = LinearTrajectory(start_position=current_position, goal_position=target_pos, total_time=8)
 
     elif task == 'circle':
         target_pos = tag_pos[0]
@@ -840,7 +841,7 @@ class Controller:
         plt.show()
         
 
-    def execute_path(self, path, rate=200, timeout=None, log=False):
+    def execute_path(self, path, rate=500, timeout=None, log=False):
         """
         takes in a path and moves the baxter in order to follow the path.  
 
@@ -929,7 +930,7 @@ class Controller:
             )
         return True
 
-    def follow_ar_tag(self, tag, args, rate=200, timeout=None, log=False):
+    def follow_ar_tag(self, tag, args, rate=200, timeout=None, log=True):
         """
         takes in an AR tag number and follows it with the baxter's arm.  You 
         should look at execute_path() for inspiration on how to write this. 
@@ -937,24 +938,64 @@ class Controller:
         Parameters
         ----------
         tag : int
-            which AR tag to useif log:
+            which AR tag to useif log:"""
+        # ik_solver = IK("base", "right_hand")
+        # limb = intera_interface.Limb('right')
+
+        # kin = sawyer_kinematics('right')
+        # tag_pos = [lookup_tag(marker) for marker in args.ar_marker]
+        # path = get_trajectory(limb, kin, ik_solver, tag_pos, args)
+
+
+
+
+       # For plotting
+        if log:
             times = list()
             actual_positions = list()
             actual_velocities = list()
             target_positions = list()
             target_velocities = list()
 
-        # For interpolation
-        max_index = len(path.joint_trajectory.points)-1
-        current_index = 0
+        # # For interpolation
+        # max_index = len(path.joint_trajectory.points)-1
+        # current_index = 0
 
         # For timing
         start_t = rospy.Time.now()
         r = rospy.Rate(rate)
 
+        path_update_interval = 6.0  # Recalculate path every 1 second
+        last_path_update_time = 0
+
+        ik_solver = IK("base", "right_hand")
+        limb = intera_interface.Limb('right')
+
+        kin = sawyer_kinematics('right')
+        tag_pos = [lookup_tag(marker) for marker in args.ar_marker]
+        path = get_trajectory(limb, kin, ik_solver, tag_pos, args)
+        max_index = len(path.joint_trajectory.points)-1
+        current_index = 0
+
         while not rospy.is_shutdown():
+            
+
             # Find the time from start
             t = (rospy.Time.now() - start_t).to_sec()
+
+            if t > 40:
+                break
+
+            if t - last_path_update_time >= path_update_interval:
+                ik_solver = IK("base", "right_hand")
+                limb = intera_interface.Limb('right')
+
+                kin = sawyer_kinematics('right')
+                tag_pos = [lookup_tag(marker) for marker in args.ar_marker]
+                path = get_trajectory(limb, kin, ik_solver, tag_pos, args)
+                max_index = len(path.joint_trajectory.points)-1
+                current_index = 0
+                last_path_update_time = t
 
             # If the controller has timed out, stop moving and return false
             if timeout is not None and t >= timeout:
@@ -987,9 +1028,9 @@ class Controller:
             # Sleep for a bit (to let robot move)
             r.sleep()
 
-            if current_index >= max_index:
-                self.stop_moving()
-                break
+            # if current_index >= max_index:
+            #     self.stop_moving()
+            #     break
 
         if log:
             self.plot_results(
@@ -1000,37 +1041,6 @@ class Controller:
                 target_velocities
             )
         return True
-        rate : int
-            This specifies how many ms between loops.  It is important to
-            use a rate and not a regular while loop b
-        ecause you want the
-            loop to refresh at a constant rate, otherwise you would have to
-            tune your PD parameters if the loop runs slower / faster
-        timeout : int
-            If you want the controller to terminate after a certain number
-            of seconds, specify a timeout in seconds.
-        log : bool
-            whether or not to display a plot of the controller performanceget_trajectory
-
-        Returns
-        -------
-        bool
-            whether the controller completes the path or not
-        """
-        # For plotting
-        ik_solver = IK("base", "right_hand")
-        limb = intera_interface.Limb('right')
-
-        kin = sawyer_kinematics('right')
-
-        print(tag)
-        tag_pos = [lookup_tag(marker) for marker in args.ar_marker]
-
-        
-
-        path = get_trajectory(limb, kin, ik_solver, tag_pos, args)
-
-        self.execute_path(path, rate, timeout, log)
 
 class FeedforwardJointVelocityController(Controller):
     def step_control(self, target_position, target_velocity, target_acceleration):
