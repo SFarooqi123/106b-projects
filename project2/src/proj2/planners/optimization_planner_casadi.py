@@ -31,7 +31,22 @@ def bicycle_robot_model(q, u, L=0.3, dt=0.01):
         # OR
         q = vcat([x + y, y, z]) # makes a 3x1 matrix with entries x + y, y, and z.
     """
-    return TODO
+    x, y, theta, phi = q
+    vel, steerVel = u
+
+    xDot = vel*cos(theta)
+    yDot = vel*sin(theta)
+
+    thetaDot = (vel/L)*tan(theta)
+    phiDot = steerVel
+
+    xNext = x + dt*xDot
+    yNext = y + dt*yDot
+    thetaNext = theta + dt*thetaDot
+    phiNext = phi + dt*phiDot
+
+
+    return vertcat(xNext, yNext, thetaNext, phiNext)
 
 def initial_cond(q_start, q_goal, n):
     """
@@ -93,12 +108,12 @@ def objective_func(q, u, q_goal, Q, R, P):
         ui = u[:, i]
 
         # Define one term of the summation here: ((q(i) - q_goal)^T * Q * (q(i) - q_goal) + (u(i)^T * R * u(i)))
-        term = TODO  
+        term = (qi - q_goal).T @ Q @ (qi - q_goal) + (ui.T) @ R @ ui
         obj += term
 
     q_last = q[:, n]
     # Define the last term here: (q(N+1) - q_goal)^T * P * (q(N+1) - q_goal)
-    term_last = TODO
+    term_last = (q_last - q_goal).T @ P @ (q_last - q_goal)
     obj += term_last
     return obj
 
@@ -138,12 +153,12 @@ def constraints(q, u, q_lb, q_ub, u_lb, u_ub, obs_list, q_start, q_goal, L=0.3, 
 
     # State constraints
     constraints.extend([q_lb[0] <= q[0, :], q[0, :] <= q_ub[0]])
-    constraints.extend([                  ,                   ]) # TODO
-    constraints.extend([                  ,                   ]) # TODO
-    constraints.extend([                  ,                   ]) # TODO
+    constraints.extend([q_lb[1] <= q[1, :], q[1, :] <= q_ub[1]])
+    constraints.extend([q_lb[2] <= q[2, :], q[2, :] <= q_ub[2]])
+    constraints.extend([q_lb[3] <= q[3, :], q[3, :] <= q_ub[3]])
     
     # Input constraints
-    constraints.extend([                  ,                   ])
+    constraints.extend([u_lb[0] <= ,                   ])
     constraints.extend([                  ,                   ])
 
     # Dynamics constraints
