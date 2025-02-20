@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_robot/robot_handler"
-  "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_robot/robot_handler.pdb"
+  "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_robot/robot_handler"
+  "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_robot/robot_handler.pdb"
   "CMakeFiles/robot_handler.dir/src/handle_robot_node.cpp.o"
 )
 

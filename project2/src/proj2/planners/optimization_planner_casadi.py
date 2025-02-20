@@ -1,5 +1,6 @@
-from casadi import Opti, sin, cos, tan, vertcat, sqrt, sumsq
+from casadi import Opti, sin, cos, tan, vertcat
 
+import math
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -31,8 +32,12 @@ def bicycle_robot_model(q, u, L=0.3, dt=0.01):
         # OR
         q = vcat([x + y, y, z]) # makes a 3x1 matrix with entries x + y, y, and z.
     """
-    x, y, theta, phi = q
-    vel, steerVel = u
+    x = q[0]
+    y = q[1]
+    theta = q[2]
+    phi = q[3]
+    vel = u[0]
+    steerVel = u[1]
 
     xDot = vel*cos(theta)
     yDot = vel*sin(theta)
@@ -182,12 +187,12 @@ def constraints(q, u, q_lb, q_ub, u_lb, u_ub, obs_list, q_start, q_goal, L=0.3, 
         obj_r += .1
 
         for t in range(q.shape[1]):
-            dist = sqrt(sumsq(q[0, t] - q[1, t]))
+            dist = math.sqrt(q[0, t]^2 + q[1, t]^2)
             constraints.append(obj_r <= dist) # Define the obstacle constraints.
 
     # Initial and final state constraints
     constraints.append(q[:, 0] == q_start) # Constraint on start state.
-    constraints.append(q[:, -1]) # Constraint on final state.
+    constraints.append(q[:, -1] == q_goal) # Constraint on final state.
 
     return constraints
 

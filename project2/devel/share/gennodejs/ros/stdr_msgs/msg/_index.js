@@ -25,27 +25,27 @@ let ThermalSensorMeasurementMsg = require('./ThermalSensorMeasurementMsg.js');
 let ThermalSensorMsg = require('./ThermalSensorMsg.js');
 let ThermalSource = require('./ThermalSource.js');
 let ThermalSourceVector = require('./ThermalSourceVector.js');
-let RegisterRobotAction = require('./RegisterRobotAction.js');
-let RegisterRobotGoal = require('./RegisterRobotGoal.js');
-let RegisterRobotActionGoal = require('./RegisterRobotActionGoal.js');
-let RegisterRobotResult = require('./RegisterRobotResult.js');
-let RegisterRobotActionResult = require('./RegisterRobotActionResult.js');
-let RegisterRobotFeedback = require('./RegisterRobotFeedback.js');
-let RegisterRobotActionFeedback = require('./RegisterRobotActionFeedback.js');
-let SpawnRobotAction = require('./SpawnRobotAction.js');
-let SpawnRobotGoal = require('./SpawnRobotGoal.js');
-let SpawnRobotActionGoal = require('./SpawnRobotActionGoal.js');
-let SpawnRobotResult = require('./SpawnRobotResult.js');
-let SpawnRobotActionResult = require('./SpawnRobotActionResult.js');
-let SpawnRobotFeedback = require('./SpawnRobotFeedback.js');
-let SpawnRobotActionFeedback = require('./SpawnRobotActionFeedback.js');
 let DeleteRobotAction = require('./DeleteRobotAction.js');
-let DeleteRobotGoal = require('./DeleteRobotGoal.js');
+let DeleteRobotActionFeedback = require('./DeleteRobotActionFeedback.js');
 let DeleteRobotActionGoal = require('./DeleteRobotActionGoal.js');
-let DeleteRobotResult = require('./DeleteRobotResult.js');
 let DeleteRobotActionResult = require('./DeleteRobotActionResult.js');
 let DeleteRobotFeedback = require('./DeleteRobotFeedback.js');
-let DeleteRobotActionFeedback = require('./DeleteRobotActionFeedback.js');
+let DeleteRobotGoal = require('./DeleteRobotGoal.js');
+let DeleteRobotResult = require('./DeleteRobotResult.js');
+let RegisterRobotAction = require('./RegisterRobotAction.js');
+let RegisterRobotActionFeedback = require('./RegisterRobotActionFeedback.js');
+let RegisterRobotActionGoal = require('./RegisterRobotActionGoal.js');
+let RegisterRobotActionResult = require('./RegisterRobotActionResult.js');
+let RegisterRobotFeedback = require('./RegisterRobotFeedback.js');
+let RegisterRobotGoal = require('./RegisterRobotGoal.js');
+let RegisterRobotResult = require('./RegisterRobotResult.js');
+let SpawnRobotAction = require('./SpawnRobotAction.js');
+let SpawnRobotActionFeedback = require('./SpawnRobotActionFeedback.js');
+let SpawnRobotActionGoal = require('./SpawnRobotActionGoal.js');
+let SpawnRobotActionResult = require('./SpawnRobotActionResult.js');
+let SpawnRobotFeedback = require('./SpawnRobotFeedback.js');
+let SpawnRobotGoal = require('./SpawnRobotGoal.js');
+let SpawnRobotResult = require('./SpawnRobotResult.js');
 
 module.exports = {
   CO2SensorMeasurementMsg: CO2SensorMeasurementMsg,
@@ -72,25 +72,25 @@ module.exports = {
   ThermalSensorMsg: ThermalSensorMsg,
   ThermalSource: ThermalSource,
   ThermalSourceVector: ThermalSourceVector,
-  RegisterRobotAction: RegisterRobotAction,
-  RegisterRobotGoal: RegisterRobotGoal,
-  RegisterRobotActionGoal: RegisterRobotActionGoal,
-  RegisterRobotResult: RegisterRobotResult,
-  RegisterRobotActionResult: RegisterRobotActionResult,
-  RegisterRobotFeedback: RegisterRobotFeedback,
-  RegisterRobotActionFeedback: RegisterRobotActionFeedback,
-  SpawnRobotAction: SpawnRobotAction,
-  SpawnRobotGoal: SpawnRobotGoal,
-  SpawnRobotActionGoal: SpawnRobotActionGoal,
-  SpawnRobotResult: SpawnRobotResult,
-  SpawnRobotActionResult: SpawnRobotActionResult,
-  SpawnRobotFeedback: SpawnRobotFeedback,
-  SpawnRobotActionFeedback: SpawnRobotActionFeedback,
   DeleteRobotAction: DeleteRobotAction,
-  DeleteRobotGoal: DeleteRobotGoal,
+  DeleteRobotActionFeedback: DeleteRobotActionFeedback,
   DeleteRobotActionGoal: DeleteRobotActionGoal,
-  DeleteRobotResult: DeleteRobotResult,
   DeleteRobotActionResult: DeleteRobotActionResult,
   DeleteRobotFeedback: DeleteRobotFeedback,
-  DeleteRobotActionFeedback: DeleteRobotActionFeedback,
+  DeleteRobotGoal: DeleteRobotGoal,
+  DeleteRobotResult: DeleteRobotResult,
+  RegisterRobotAction: RegisterRobotAction,
+  RegisterRobotActionFeedback: RegisterRobotActionFeedback,
+  RegisterRobotActionGoal: RegisterRobotActionGoal,
+  RegisterRobotActionResult: RegisterRobotActionResult,
+  RegisterRobotFeedback: RegisterRobotFeedback,
+  RegisterRobotGoal: RegisterRobotGoal,
+  RegisterRobotResult: RegisterRobotResult,
+  SpawnRobotAction: SpawnRobotAction,
+  SpawnRobotActionFeedback: SpawnRobotActionFeedback,
+  SpawnRobotActionGoal: SpawnRobotActionGoal,
+  SpawnRobotActionResult: SpawnRobotActionResult,
+  SpawnRobotFeedback: SpawnRobotFeedback,
+  SpawnRobotGoal: SpawnRobotGoal,
+  SpawnRobotResult: SpawnRobotResult,
 };

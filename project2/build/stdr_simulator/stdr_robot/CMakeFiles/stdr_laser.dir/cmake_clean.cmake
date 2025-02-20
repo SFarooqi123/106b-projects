@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/libstdr_laser.pdb"
-  "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/libstdr_laser.so"
+  "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/libstdr_laser.pdb"
+  "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/libstdr_laser.so"
   "CMakeFiles/stdr_laser.dir/src/sensors/laser.cpp.o"
 )
 

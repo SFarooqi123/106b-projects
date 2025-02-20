@@ -67,14 +67,14 @@ set(stdr_gui_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(stdr_gui_SOURCE_PREFIX /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_gui)
-  set(stdr_gui_DEVEL_PREFIX /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel)
+  set(stdr_gui_SOURCE_PREFIX /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_gui)
+  set(stdr_gui_DEVEL_PREFIX /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel)
   set(stdr_gui_INSTALL_PREFIX "")
   set(stdr_gui_PREFIX ${stdr_gui_DEVEL_PREFIX})
 else()
   set(stdr_gui_SOURCE_PREFIX "")
   set(stdr_gui_DEVEL_PREFIX "")
-  set(stdr_gui_INSTALL_PREFIX /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/install)
+  set(stdr_gui_INSTALL_PREFIX /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/install)
   set(stdr_gui_PREFIX ${stdr_gui_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/install/lib;/opt/ros/noetic/lib)
+    foreach(path /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/install/lib;/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

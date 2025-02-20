@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src
+CMAKE_SOURCE_DIR = /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build
+CMAKE_BINARY_DIR = /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,14 +137,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/CMakeFiles /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/stdr_simulator/stdr_samples/CMakeFiles/progress.marks
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_samples/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/CMakeFiles 0
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/CMakeFiles /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/stdr_simulator/stdr_samples/CMakeFiles/progress.marks
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_samples/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_samples/clean
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_samples/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,22 +154,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_samples/preinstall
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_samples/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_samples/preinstall
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_samples/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/rule
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/rule
 .PHONY : stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/rule
 
 # Convenience name for target.
@@ -179,7 +179,7 @@ stdr_obstacle_avoidance: stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_av
 
 # fast build rule for target.
 stdr_obstacle_avoidance/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build.make stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build.make stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build
 .PHONY : stdr_obstacle_avoidance/fast
 
 src/obstacle_avoidance/main.o: src/obstacle_avoidance/main.cpp.o
@@ -188,7 +188,7 @@ src/obstacle_avoidance/main.o: src/obstacle_avoidance/main.cpp.o
 
 # target to build an object file
 src/obstacle_avoidance/main.cpp.o:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build.make stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.o
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build.make stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.o
 .PHONY : src/obstacle_avoidance/main.cpp.o
 
 src/obstacle_avoidance/main.i: src/obstacle_avoidance/main.cpp.i
@@ -197,7 +197,7 @@ src/obstacle_avoidance/main.i: src/obstacle_avoidance/main.cpp.i
 
 # target to preprocess a source file
 src/obstacle_avoidance/main.cpp.i:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build.make stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.i
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build.make stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.i
 .PHONY : src/obstacle_avoidance/main.cpp.i
 
 src/obstacle_avoidance/main.s: src/obstacle_avoidance/main.cpp.s
@@ -206,7 +206,7 @@ src/obstacle_avoidance/main.s: src/obstacle_avoidance/main.cpp.s
 
 # target to generate assembly for a file
 src/obstacle_avoidance/main.cpp.s:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build.make stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.s
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build.make stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.s
 .PHONY : src/obstacle_avoidance/main.cpp.s
 
 src/obstacle_avoidance/obstacle_avoidance.o: src/obstacle_avoidance/obstacle_avoidance.cpp.o
@@ -215,7 +215,7 @@ src/obstacle_avoidance/obstacle_avoidance.o: src/obstacle_avoidance/obstacle_avo
 
 # target to build an object file
 src/obstacle_avoidance/obstacle_avoidance.cpp.o:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build.make stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.o
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build.make stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.o
 .PHONY : src/obstacle_avoidance/obstacle_avoidance.cpp.o
 
 src/obstacle_avoidance/obstacle_avoidance.i: src/obstacle_avoidance/obstacle_avoidance.cpp.i
@@ -224,7 +224,7 @@ src/obstacle_avoidance/obstacle_avoidance.i: src/obstacle_avoidance/obstacle_avo
 
 # target to preprocess a source file
 src/obstacle_avoidance/obstacle_avoidance.cpp.i:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build.make stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.i
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build.make stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.i
 .PHONY : src/obstacle_avoidance/obstacle_avoidance.cpp.i
 
 src/obstacle_avoidance/obstacle_avoidance.s: src/obstacle_avoidance/obstacle_avoidance.cpp.s
@@ -233,7 +233,7 @@ src/obstacle_avoidance/obstacle_avoidance.s: src/obstacle_avoidance/obstacle_avo
 
 # target to generate assembly for a file
 src/obstacle_avoidance/obstacle_avoidance.cpp.s:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build.make stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.s
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build.make stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.s
 .PHONY : src/obstacle_avoidance/obstacle_avoidance.cpp.s
 
 # Help Target
@@ -267,6 +267,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
