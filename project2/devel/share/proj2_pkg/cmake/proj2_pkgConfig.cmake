@@ -67,7 +67,7 @@ set(proj2_pkg_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(proj2_pkg_SOURCE_PREFIX /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/proj2)
+  set(proj2_pkg_SOURCE_PREFIX /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/proj2_pkg)
   set(proj2_pkg_DEVEL_PREFIX /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel)
   set(proj2_pkg_INSTALL_PREFIX "")
   set(proj2_pkg_PREFIX ${proj2_pkg_DEVEL_PREFIX})
@@ -110,7 +110,7 @@ if(NOT "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/proje
         message(FATAL_ERROR "Project 'proj2_pkg' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'proj2_pkg' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/proj2/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'proj2_pkg' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/proj2_pkg/${idir}'.  ${_report}")
     endif()
     _list_append_unique(proj2_pkg_INCLUDE_DIRS ${include})
   endforeach()
