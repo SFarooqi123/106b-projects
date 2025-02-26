@@ -80,39 +80,6 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -134,6 +101,39 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,79 +168,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_py.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_py.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_py.dir/rule
+proj2_pkg/CMakeFiles/proj2_pkg_generate_messages.dir/rule:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/proj2_pkg_generate_messages.dir/rule
+.PHONY : proj2_pkg/CMakeFiles/proj2_pkg_generate_messages.dir/rule
 
 # Convenience name for target.
-proj2_pkg_generate_messages_py: proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_py.dir/rule
+proj2_pkg_generate_messages: proj2_pkg/CMakeFiles/proj2_pkg_generate_messages.dir/rule
 
-.PHONY : proj2_pkg_generate_messages_py
+.PHONY : proj2_pkg_generate_messages
 
 # fast build rule for target.
-proj2_pkg_generate_messages_py/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_py.dir/build.make proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_py.dir/build
-.PHONY : proj2_pkg_generate_messages_py/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/proj2_pkg_gennodejs.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/proj2_pkg_gennodejs.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/proj2_pkg_gennodejs.dir/rule
-
-# Convenience name for target.
-proj2_pkg_gennodejs: proj2_pkg/CMakeFiles/proj2_pkg_gennodejs.dir/rule
-
-.PHONY : proj2_pkg_gennodejs
-
-# fast build rule for target.
-proj2_pkg_gennodejs/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/proj2_pkg_gennodejs.dir/build.make proj2_pkg/CMakeFiles/proj2_pkg_gennodejs.dir/build
-.PHONY : proj2_pkg_gennodejs/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/proj2_pkg_genlisp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/proj2_pkg_genlisp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/proj2_pkg_genlisp.dir/rule
-
-# Convenience name for target.
-proj2_pkg_genlisp: proj2_pkg/CMakeFiles/proj2_pkg_genlisp.dir/rule
-
-.PHONY : proj2_pkg_genlisp
-
-# fast build rule for target.
-proj2_pkg_genlisp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/proj2_pkg_genlisp.dir/build.make proj2_pkg/CMakeFiles/proj2_pkg_genlisp.dir/build
-.PHONY : proj2_pkg_genlisp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/proj2_pkg_geneus.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/proj2_pkg_geneus.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/proj2_pkg_geneus.dir/rule
-
-# Convenience name for target.
-proj2_pkg_geneus: proj2_pkg/CMakeFiles/proj2_pkg_geneus.dir/rule
-
-.PHONY : proj2_pkg_geneus
-
-# fast build rule for target.
-proj2_pkg_geneus/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/proj2_pkg_geneus.dir/build.make proj2_pkg/CMakeFiles/proj2_pkg_geneus.dir/build
-.PHONY : proj2_pkg_geneus/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_nodejs.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_nodejs.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-proj2_pkg_generate_messages_nodejs: proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_nodejs.dir/rule
-
-.PHONY : proj2_pkg_generate_messages_nodejs
-
-# fast build rule for target.
-proj2_pkg_generate_messages_nodejs/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_nodejs.dir/build.make proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_nodejs.dir/build
-.PHONY : proj2_pkg_generate_messages_nodejs/fast
+proj2_pkg_generate_messages/fast:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/proj2_pkg_generate_messages.dir/build.make proj2_pkg/CMakeFiles/proj2_pkg_generate_messages.dir/build
+.PHONY : proj2_pkg_generate_messages/fast
 
 # Convenience name for target.
 proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_eus.dir/rule:
@@ -258,34 +198,34 @@ proj2_pkg_generate_messages_eus/fast:
 .PHONY : proj2_pkg_generate_messages_eus/fast
 
 # Convenience name for target.
-proj2_pkg/CMakeFiles/tf_generate_messages_nodejs.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/tf_generate_messages_nodejs.dir/rule
+proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleStateMsg.dir/rule:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleStateMsg.dir/rule
+.PHONY : proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleStateMsg.dir/rule
 
 # Convenience name for target.
-tf_generate_messages_nodejs: proj2_pkg/CMakeFiles/tf_generate_messages_nodejs.dir/rule
+_proj2_pkg_generate_messages_check_deps_BicycleStateMsg: proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleStateMsg.dir/rule
 
-.PHONY : tf_generate_messages_nodejs
+.PHONY : _proj2_pkg_generate_messages_check_deps_BicycleStateMsg
 
 # fast build rule for target.
-tf_generate_messages_nodejs/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/tf_generate_messages_nodejs.dir/build.make proj2_pkg/CMakeFiles/tf_generate_messages_nodejs.dir/build
-.PHONY : tf_generate_messages_nodejs/fast
+_proj2_pkg_generate_messages_check_deps_BicycleStateMsg/fast:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleStateMsg.dir/build.make proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleStateMsg.dir/build
+.PHONY : _proj2_pkg_generate_messages_check_deps_BicycleStateMsg/fast
 
 # Convenience name for target.
-proj2_pkg/CMakeFiles/proj2_pkg_generate_messages.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/proj2_pkg_generate_messages.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/proj2_pkg_generate_messages.dir/rule
+proj2_pkg/CMakeFiles/turtlesim_generate_messages_py.dir/rule:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/turtlesim_generate_messages_py.dir/rule
+.PHONY : proj2_pkg/CMakeFiles/turtlesim_generate_messages_py.dir/rule
 
 # Convenience name for target.
-proj2_pkg_generate_messages: proj2_pkg/CMakeFiles/proj2_pkg_generate_messages.dir/rule
+turtlesim_generate_messages_py: proj2_pkg/CMakeFiles/turtlesim_generate_messages_py.dir/rule
 
-.PHONY : proj2_pkg_generate_messages
+.PHONY : turtlesim_generate_messages_py
 
 # fast build rule for target.
-proj2_pkg_generate_messages/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/proj2_pkg_generate_messages.dir/build.make proj2_pkg/CMakeFiles/proj2_pkg_generate_messages.dir/build
-.PHONY : proj2_pkg_generate_messages/fast
+turtlesim_generate_messages_py/fast:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/turtlesim_generate_messages_py.dir/build.make proj2_pkg/CMakeFiles/turtlesim_generate_messages_py.dir/build
+.PHONY : turtlesim_generate_messages_py/fast
 
 # Convenience name for target.
 proj2_pkg/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule:
@@ -301,6 +241,66 @@ std_srvs_generate_messages_nodejs: proj2_pkg/CMakeFiles/std_srvs_generate_messag
 std_srvs_generate_messages_nodejs/fast:
 	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make proj2_pkg/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
 .PHONY : std_srvs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+proj2_pkg/CMakeFiles/turtlesim_generate_messages_lisp.dir/rule:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/turtlesim_generate_messages_lisp.dir/rule
+.PHONY : proj2_pkg/CMakeFiles/turtlesim_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+turtlesim_generate_messages_lisp: proj2_pkg/CMakeFiles/turtlesim_generate_messages_lisp.dir/rule
+
+.PHONY : turtlesim_generate_messages_lisp
+
+# fast build rule for target.
+turtlesim_generate_messages_lisp/fast:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/turtlesim_generate_messages_lisp.dir/build.make proj2_pkg/CMakeFiles/turtlesim_generate_messages_lisp.dir/build
+.PHONY : turtlesim_generate_messages_lisp/fast
+
+# Convenience name for target.
+proj2_pkg/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule
+.PHONY : proj2_pkg/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+turtlesim_generate_messages_cpp: proj2_pkg/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule
+
+.PHONY : turtlesim_generate_messages_cpp
+
+# fast build rule for target.
+turtlesim_generate_messages_cpp/fast:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/turtlesim_generate_messages_cpp.dir/build.make proj2_pkg/CMakeFiles/turtlesim_generate_messages_cpp.dir/build
+.PHONY : turtlesim_generate_messages_cpp/fast
+
+# Convenience name for target.
+proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleCommandMsg.dir/rule:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleCommandMsg.dir/rule
+.PHONY : proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleCommandMsg.dir/rule
+
+# Convenience name for target.
+_proj2_pkg_generate_messages_check_deps_BicycleCommandMsg: proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleCommandMsg.dir/rule
+
+.PHONY : _proj2_pkg_generate_messages_check_deps_BicycleCommandMsg
+
+# fast build rule for target.
+_proj2_pkg_generate_messages_check_deps_BicycleCommandMsg/fast:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleCommandMsg.dir/build.make proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleCommandMsg.dir/build
+.PHONY : _proj2_pkg_generate_messages_check_deps_BicycleCommandMsg/fast
+
+# Convenience name for target.
+proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_py.dir/rule:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_py.dir/rule
+.PHONY : proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_py.dir/rule
+
+# Convenience name for target.
+proj2_pkg_generate_messages_py: proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_py.dir/rule
+
+.PHONY : proj2_pkg_generate_messages_py
+
+# fast build rule for target.
+proj2_pkg_generate_messages_py/fast:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_py.dir/build.make proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_py.dir/build
+.PHONY : proj2_pkg_generate_messages_py/fast
 
 # Convenience name for target.
 proj2_pkg/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule:
@@ -333,756 +333,6 @@ std_srvs_generate_messages_eus/fast:
 .PHONY : std_srvs_generate_messages_eus/fast
 
 # Convenience name for target.
-proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_cpp: proj2_pkg/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-.PHONY : actionlib_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_generate_messages_cpp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make proj2_pkg/CMakeFiles/actionlib_generate_messages_cpp.dir/build
-.PHONY : actionlib_generate_messages_cpp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_py: proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_py
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_py/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
-.PHONY : actionlib_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/tf_generate_messages_cpp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/tf_generate_messages_cpp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_cpp: proj2_pkg/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-.PHONY : tf_generate_messages_cpp
-
-# fast build rule for target.
-tf_generate_messages_cpp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/tf_generate_messages_cpp.dir/build.make proj2_pkg/CMakeFiles/tf_generate_messages_cpp.dir/build
-.PHONY : tf_generate_messages_cpp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_eus: proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_eus
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_eus/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
-.PHONY : actionlib_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/tf_generate_messages_eus.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/tf_generate_messages_eus.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/tf_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_eus: proj2_pkg/CMakeFiles/tf_generate_messages_eus.dir/rule
-
-.PHONY : tf_generate_messages_eus
-
-# fast build rule for target.
-tf_generate_messages_eus/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/tf_generate_messages_eus.dir/build.make proj2_pkg/CMakeFiles/tf_generate_messages_eus.dir/build
-.PHONY : tf_generate_messages_eus/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_cpp: proj2_pkg/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-
-.PHONY : std_srvs_generate_messages_cpp
-
-# fast build rule for target.
-std_srvs_generate_messages_cpp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make proj2_pkg/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
-.PHONY : std_srvs_generate_messages_cpp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_cpp: proj2_pkg/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : std_msgs_generate_messages_cpp
-
-# fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make proj2_pkg/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_cpp: proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_cpp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_cpp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
-.PHONY : tf2_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/std_srvs_generate_messages_py.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_py: proj2_pkg/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-
-.PHONY : std_srvs_generate_messages_py
-
-# fast build rule for target.
-std_srvs_generate_messages_py/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/std_srvs_generate_messages_py.dir/build.make proj2_pkg/CMakeFiles/std_srvs_generate_messages_py.dir/build
-.PHONY : std_srvs_generate_messages_py/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_eus: proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_eus
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_py: proj2_pkg/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-.PHONY : roscpp_generate_messages_py
-
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/roscpp_generate_messages_py.dir/build.make proj2_pkg/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_eus: proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/proj2_pkg_gencpp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/proj2_pkg_gencpp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/proj2_pkg_gencpp.dir/rule
-
-# Convenience name for target.
-proj2_pkg_gencpp: proj2_pkg/CMakeFiles/proj2_pkg_gencpp.dir/rule
-
-.PHONY : proj2_pkg_gencpp
-
-# fast build rule for target.
-proj2_pkg_gencpp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/proj2_pkg_gencpp.dir/build.make proj2_pkg/CMakeFiles/proj2_pkg_gencpp.dir/build
-.PHONY : proj2_pkg_gencpp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_nodejs: proj2_pkg/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make proj2_pkg/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: proj2_pkg/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make proj2_pkg/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_py: proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_py
-
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/proj2_pkg_genpy.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/proj2_pkg_genpy.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/proj2_pkg_genpy.dir/rule
-
-# Convenience name for target.
-proj2_pkg_genpy: proj2_pkg/CMakeFiles/proj2_pkg_genpy.dir/rule
-
-.PHONY : proj2_pkg_genpy
-
-# fast build rule for target.
-proj2_pkg_genpy/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/proj2_pkg_genpy.dir/build.make proj2_pkg/CMakeFiles/proj2_pkg_genpy.dir/build
-.PHONY : proj2_pkg_genpy/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_nodejs: proj2_pkg/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-.PHONY : roscpp_generate_messages_nodejs
-
-# fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make proj2_pkg/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_py: proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_py: proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_py
-
-# fast build rule for target.
-tf2_msgs_generate_messages_py/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_py.dir/build
-.PHONY : tf2_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_nodejs: proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make proj2_pkg/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_lisp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_lisp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-proj2_pkg_generate_messages_lisp: proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_lisp.dir/rule
-
-.PHONY : proj2_pkg_generate_messages_lisp
-
-# fast build rule for target.
-proj2_pkg_generate_messages_lisp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_lisp.dir/build.make proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_lisp.dir/build
-.PHONY : proj2_pkg_generate_messages_lisp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-turtlesim_generate_messages_cpp: proj2_pkg/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule
-
-.PHONY : turtlesim_generate_messages_cpp
-
-# fast build rule for target.
-turtlesim_generate_messages_cpp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/turtlesim_generate_messages_cpp.dir/build.make proj2_pkg/CMakeFiles/turtlesim_generate_messages_cpp.dir/build
-.PHONY : turtlesim_generate_messages_cpp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_lisp: proj2_pkg/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-.PHONY : roscpp_generate_messages_lisp
-
-# fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make proj2_pkg/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/actionlib_generate_messages_lisp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_lisp: proj2_pkg/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-
-.PHONY : actionlib_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_generate_messages_lisp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make proj2_pkg/CMakeFiles/actionlib_generate_messages_lisp.dir/build
-.PHONY : actionlib_generate_messages_lisp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: proj2_pkg/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make proj2_pkg/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_py: proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_py
-
-# fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_eus: proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_eus
-
-# fast build rule for target.
-tf2_msgs_generate_messages_eus/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build.make proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build
-.PHONY : tf2_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_py: proj2_pkg/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-.PHONY : std_msgs_generate_messages_py
-
-# fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/std_msgs_generate_messages_py.dir/build.make proj2_pkg/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_cpp: proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_cpp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_eus: proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_eus
-
-# fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_lisp: proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_lisp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_nodejs: proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-sensor_msgs_generate_messages_nodejs/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make proj2_pkg/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-.PHONY : sensor_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make proj2_pkg/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/actionlib_generate_messages_eus.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_eus: proj2_pkg/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-
-.PHONY : actionlib_generate_messages_eus
-
-# fast build rule for target.
-actionlib_generate_messages_eus/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/actionlib_generate_messages_eus.dir/build.make proj2_pkg/CMakeFiles/actionlib_generate_messages_eus.dir/build
-.PHONY : actionlib_generate_messages_eus/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_nodejs: proj2_pkg/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_generate_messages_nodejs/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make proj2_pkg/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
-.PHONY : actionlib_generate_messages_nodejs/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/actionlib_generate_messages_py.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/actionlib_generate_messages_py.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_py: proj2_pkg/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-.PHONY : actionlib_generate_messages_py
-
-# fast build rule for target.
-actionlib_generate_messages_py/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/actionlib_generate_messages_py.dir/build.make proj2_pkg/CMakeFiles/actionlib_generate_messages_py.dir/build
-.PHONY : actionlib_generate_messages_py/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/tf_generate_messages_py.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/tf_generate_messages_py.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/tf_generate_messages_py.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_py: proj2_pkg/CMakeFiles/tf_generate_messages_py.dir/rule
-
-.PHONY : tf_generate_messages_py
-
-# fast build rule for target.
-tf_generate_messages_py/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/tf_generate_messages_py.dir/build.make proj2_pkg/CMakeFiles/tf_generate_messages_py.dir/build
-.PHONY : tf_generate_messages_py/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_eus: proj2_pkg/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-.PHONY : std_msgs_generate_messages_eus
-
-# fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make proj2_pkg/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_nodejs: proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_nodejs/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
-.PHONY : actionlib_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_lisp: proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_lisp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
-.PHONY : actionlib_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_lisp: proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_lisp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_lisp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
-.PHONY : tf2_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_nodejs: proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-tf2_msgs_generate_messages_nodejs/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build.make proj2_pkg/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build
-.PHONY : tf2_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/turtlesim_generate_messages_eus.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/turtlesim_generate_messages_eus.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/turtlesim_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-turtlesim_generate_messages_eus: proj2_pkg/CMakeFiles/turtlesim_generate_messages_eus.dir/rule
-
-.PHONY : turtlesim_generate_messages_eus
-
-# fast build rule for target.
-turtlesim_generate_messages_eus/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/turtlesim_generate_messages_eus.dir/build.make proj2_pkg/CMakeFiles/turtlesim_generate_messages_eus.dir/build
-.PHONY : turtlesim_generate_messages_eus/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/turtlesim_generate_messages_lisp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/turtlesim_generate_messages_lisp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/turtlesim_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-turtlesim_generate_messages_lisp: proj2_pkg/CMakeFiles/turtlesim_generate_messages_lisp.dir/rule
-
-.PHONY : turtlesim_generate_messages_lisp
-
-# fast build rule for target.
-turtlesim_generate_messages_lisp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/turtlesim_generate_messages_lisp.dir/build.make proj2_pkg/CMakeFiles/turtlesim_generate_messages_lisp.dir/build
-.PHONY : turtlesim_generate_messages_lisp/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_cpp: proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_cpp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make proj2_pkg/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
-.PHONY : actionlib_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
 proj2_pkg/CMakeFiles/turtlesim_generate_messages_nodejs.dir/rule:
 	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/turtlesim_generate_messages_nodejs.dir/rule
 .PHONY : proj2_pkg/CMakeFiles/turtlesim_generate_messages_nodejs.dir/rule
@@ -1096,21 +346,6 @@ turtlesim_generate_messages_nodejs: proj2_pkg/CMakeFiles/turtlesim_generate_mess
 turtlesim_generate_messages_nodejs/fast:
 	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/turtlesim_generate_messages_nodejs.dir/build.make proj2_pkg/CMakeFiles/turtlesim_generate_messages_nodejs.dir/build
 .PHONY : turtlesim_generate_messages_nodejs/fast
-
-# Convenience name for target.
-proj2_pkg/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_eus: proj2_pkg/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-.PHONY : roscpp_generate_messages_eus
-
-# fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/roscpp_generate_messages_eus.dir/build.make proj2_pkg/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
 
 # Convenience name for target.
 proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_cpp.dir/rule:
@@ -1128,64 +363,154 @@ proj2_pkg_generate_messages_cpp/fast:
 .PHONY : proj2_pkg_generate_messages_cpp/fast
 
 # Convenience name for target.
-proj2_pkg/CMakeFiles/tf_generate_messages_lisp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/tf_generate_messages_lisp.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/tf_generate_messages_lisp.dir/rule
+proj2_pkg/CMakeFiles/proj2_pkg_gencpp.dir/rule:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/proj2_pkg_gencpp.dir/rule
+.PHONY : proj2_pkg/CMakeFiles/proj2_pkg_gencpp.dir/rule
 
 # Convenience name for target.
-tf_generate_messages_lisp: proj2_pkg/CMakeFiles/tf_generate_messages_lisp.dir/rule
+proj2_pkg_gencpp: proj2_pkg/CMakeFiles/proj2_pkg_gencpp.dir/rule
 
-.PHONY : tf_generate_messages_lisp
+.PHONY : proj2_pkg_gencpp
 
 # fast build rule for target.
-tf_generate_messages_lisp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/tf_generate_messages_lisp.dir/build.make proj2_pkg/CMakeFiles/tf_generate_messages_lisp.dir/build
-.PHONY : tf_generate_messages_lisp/fast
+proj2_pkg_gencpp/fast:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/proj2_pkg_gencpp.dir/build.make proj2_pkg/CMakeFiles/proj2_pkg_gencpp.dir/build
+.PHONY : proj2_pkg_gencpp/fast
 
 # Convenience name for target.
-proj2_pkg/CMakeFiles/turtlesim_generate_messages_py.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/turtlesim_generate_messages_py.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/turtlesim_generate_messages_py.dir/rule
+proj2_pkg/CMakeFiles/proj2_pkg_geneus.dir/rule:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/proj2_pkg_geneus.dir/rule
+.PHONY : proj2_pkg/CMakeFiles/proj2_pkg_geneus.dir/rule
 
 # Convenience name for target.
-turtlesim_generate_messages_py: proj2_pkg/CMakeFiles/turtlesim_generate_messages_py.dir/rule
+proj2_pkg_geneus: proj2_pkg/CMakeFiles/proj2_pkg_geneus.dir/rule
 
-.PHONY : turtlesim_generate_messages_py
+.PHONY : proj2_pkg_geneus
 
 # fast build rule for target.
-turtlesim_generate_messages_py/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/turtlesim_generate_messages_py.dir/build.make proj2_pkg/CMakeFiles/turtlesim_generate_messages_py.dir/build
-.PHONY : turtlesim_generate_messages_py/fast
+proj2_pkg_geneus/fast:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/proj2_pkg_geneus.dir/build.make proj2_pkg/CMakeFiles/proj2_pkg_geneus.dir/build
+.PHONY : proj2_pkg_geneus/fast
 
 # Convenience name for target.
-proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleStateMsg.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleStateMsg.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleStateMsg.dir/rule
+proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_nodejs.dir/rule:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_nodejs.dir/rule
+.PHONY : proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-_proj2_pkg_generate_messages_check_deps_BicycleStateMsg: proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleStateMsg.dir/rule
+proj2_pkg_generate_messages_nodejs: proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_nodejs.dir/rule
 
-.PHONY : _proj2_pkg_generate_messages_check_deps_BicycleStateMsg
+.PHONY : proj2_pkg_generate_messages_nodejs
 
 # fast build rule for target.
-_proj2_pkg_generate_messages_check_deps_BicycleStateMsg/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleStateMsg.dir/build.make proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleStateMsg.dir/build
-.PHONY : _proj2_pkg_generate_messages_check_deps_BicycleStateMsg/fast
+proj2_pkg_generate_messages_nodejs/fast:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_nodejs.dir/build.make proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_nodejs.dir/build
+.PHONY : proj2_pkg_generate_messages_nodejs/fast
 
 # Convenience name for target.
-proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleCommandMsg.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleCommandMsg.dir/rule
-.PHONY : proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleCommandMsg.dir/rule
+proj2_pkg/CMakeFiles/proj2_pkg_genlisp.dir/rule:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/proj2_pkg_genlisp.dir/rule
+.PHONY : proj2_pkg/CMakeFiles/proj2_pkg_genlisp.dir/rule
 
 # Convenience name for target.
-_proj2_pkg_generate_messages_check_deps_BicycleCommandMsg: proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleCommandMsg.dir/rule
+proj2_pkg_genlisp: proj2_pkg/CMakeFiles/proj2_pkg_genlisp.dir/rule
 
-.PHONY : _proj2_pkg_generate_messages_check_deps_BicycleCommandMsg
+.PHONY : proj2_pkg_genlisp
 
 # fast build rule for target.
-_proj2_pkg_generate_messages_check_deps_BicycleCommandMsg/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleCommandMsg.dir/build.make proj2_pkg/CMakeFiles/_proj2_pkg_generate_messages_check_deps_BicycleCommandMsg.dir/build
-.PHONY : _proj2_pkg_generate_messages_check_deps_BicycleCommandMsg/fast
+proj2_pkg_genlisp/fast:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/proj2_pkg_genlisp.dir/build.make proj2_pkg/CMakeFiles/proj2_pkg_genlisp.dir/build
+.PHONY : proj2_pkg_genlisp/fast
+
+# Convenience name for target.
+proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_lisp.dir/rule:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_lisp.dir/rule
+.PHONY : proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+proj2_pkg_generate_messages_lisp: proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_lisp.dir/rule
+
+.PHONY : proj2_pkg_generate_messages_lisp
+
+# fast build rule for target.
+proj2_pkg_generate_messages_lisp/fast:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_lisp.dir/build.make proj2_pkg/CMakeFiles/proj2_pkg_generate_messages_lisp.dir/build
+.PHONY : proj2_pkg_generate_messages_lisp/fast
+
+# Convenience name for target.
+proj2_pkg/CMakeFiles/proj2_pkg_gennodejs.dir/rule:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/proj2_pkg_gennodejs.dir/rule
+.PHONY : proj2_pkg/CMakeFiles/proj2_pkg_gennodejs.dir/rule
+
+# Convenience name for target.
+proj2_pkg_gennodejs: proj2_pkg/CMakeFiles/proj2_pkg_gennodejs.dir/rule
+
+.PHONY : proj2_pkg_gennodejs
+
+# fast build rule for target.
+proj2_pkg_gennodejs/fast:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/proj2_pkg_gennodejs.dir/build.make proj2_pkg/CMakeFiles/proj2_pkg_gennodejs.dir/build
+.PHONY : proj2_pkg_gennodejs/fast
+
+# Convenience name for target.
+proj2_pkg/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+.PHONY : proj2_pkg/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_cpp: proj2_pkg/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+
+.PHONY : std_srvs_generate_messages_cpp
+
+# fast build rule for target.
+std_srvs_generate_messages_cpp/fast:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make proj2_pkg/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
+.PHONY : std_srvs_generate_messages_cpp/fast
+
+# Convenience name for target.
+proj2_pkg/CMakeFiles/proj2_pkg_genpy.dir/rule:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/proj2_pkg_genpy.dir/rule
+.PHONY : proj2_pkg/CMakeFiles/proj2_pkg_genpy.dir/rule
+
+# Convenience name for target.
+proj2_pkg_genpy: proj2_pkg/CMakeFiles/proj2_pkg_genpy.dir/rule
+
+.PHONY : proj2_pkg_genpy
+
+# fast build rule for target.
+proj2_pkg_genpy/fast:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/proj2_pkg_genpy.dir/build.make proj2_pkg/CMakeFiles/proj2_pkg_genpy.dir/build
+.PHONY : proj2_pkg_genpy/fast
+
+# Convenience name for target.
+proj2_pkg/CMakeFiles/std_srvs_generate_messages_py.dir/rule:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+.PHONY : proj2_pkg/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_py: proj2_pkg/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+
+.PHONY : std_srvs_generate_messages_py
+
+# fast build rule for target.
+std_srvs_generate_messages_py/fast:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/std_srvs_generate_messages_py.dir/build.make proj2_pkg/CMakeFiles/std_srvs_generate_messages_py.dir/build
+.PHONY : std_srvs_generate_messages_py/fast
+
+# Convenience name for target.
+proj2_pkg/CMakeFiles/turtlesim_generate_messages_eus.dir/rule:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 proj2_pkg/CMakeFiles/turtlesim_generate_messages_eus.dir/rule
+.PHONY : proj2_pkg/CMakeFiles/turtlesim_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+turtlesim_generate_messages_eus: proj2_pkg/CMakeFiles/turtlesim_generate_messages_eus.dir/rule
+
+.PHONY : turtlesim_generate_messages_eus
+
+# fast build rule for target.
+turtlesim_generate_messages_eus/fast:
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f proj2_pkg/CMakeFiles/turtlesim_generate_messages_eus.dir/build.make proj2_pkg/CMakeFiles/turtlesim_generate_messages_eus.dir/build
+.PHONY : turtlesim_generate_messages_eus/fast
 
 # Help Target
 help:
@@ -1194,80 +519,35 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install/local"
-	@echo "... install"
-	@echo "... list_install_components"
-	@echo "... rebuild_cache"
-	@echo "... test"
-	@echo "... proj2_pkg_generate_messages_py"
-	@echo "... proj2_pkg_gennodejs"
-	@echo "... proj2_pkg_genlisp"
-	@echo "... proj2_pkg_geneus"
-	@echo "... proj2_pkg_generate_messages_nodejs"
-	@echo "... proj2_pkg_generate_messages_eus"
-	@echo "... tf_generate_messages_nodejs"
 	@echo "... proj2_pkg_generate_messages"
+	@echo "... proj2_pkg_generate_messages_eus"
+	@echo "... _proj2_pkg_generate_messages_check_deps_BicycleStateMsg"
+	@echo "... turtlesim_generate_messages_py"
 	@echo "... std_srvs_generate_messages_nodejs"
+	@echo "... turtlesim_generate_messages_lisp"
+	@echo "... turtlesim_generate_messages_cpp"
+	@echo "... _proj2_pkg_generate_messages_check_deps_BicycleCommandMsg"
+	@echo "... install/local"
+	@echo "... proj2_pkg_generate_messages_py"
 	@echo "... std_srvs_generate_messages_lisp"
 	@echo "... std_srvs_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... actionlib_generate_messages_cpp"
-	@echo "... actionlib_msgs_generate_messages_py"
-	@echo "... tf_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... actionlib_msgs_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... tf_generate_messages_eus"
-	@echo "... std_srvs_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... tf2_msgs_generate_messages_cpp"
-	@echo "... std_srvs_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... proj2_pkg_gencpp"
-	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... proj2_pkg_genpy"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... tf2_msgs_generate_messages_py"
-	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... proj2_pkg_generate_messages_lisp"
-	@echo "... turtlesim_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... actionlib_generate_messages_lisp"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... tf2_msgs_generate_messages_eus"
-	@echo "... std_msgs_generate_messages_py"
-	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... sensor_msgs_generate_messages_lisp"
-	@echo "... edit_cache"
-	@echo "... sensor_msgs_generate_messages_nodejs"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... actionlib_generate_messages_eus"
-	@echo "... actionlib_generate_messages_nodejs"
-	@echo "... actionlib_generate_messages_py"
-	@echo "... tf_generate_messages_py"
-	@echo "... std_msgs_generate_messages_eus"
-	@echo "... actionlib_msgs_generate_messages_nodejs"
-	@echo "... actionlib_msgs_generate_messages_lisp"
-	@echo "... tf2_msgs_generate_messages_lisp"
-	@echo "... tf2_msgs_generate_messages_nodejs"
-	@echo "... turtlesim_generate_messages_eus"
-	@echo "... turtlesim_generate_messages_lisp"
-	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... turtlesim_generate_messages_nodejs"
-	@echo "... roscpp_generate_messages_eus"
 	@echo "... proj2_pkg_generate_messages_cpp"
-	@echo "... tf_generate_messages_lisp"
-	@echo "... turtlesim_generate_messages_py"
-	@echo "... _proj2_pkg_generate_messages_check_deps_BicycleStateMsg"
-	@echo "... _proj2_pkg_generate_messages_check_deps_BicycleCommandMsg"
+	@echo "... proj2_pkg_gencpp"
+	@echo "... proj2_pkg_geneus"
+	@echo "... proj2_pkg_generate_messages_nodejs"
+	@echo "... proj2_pkg_genlisp"
+	@echo "... proj2_pkg_generate_messages_lisp"
+	@echo "... proj2_pkg_gennodejs"
+	@echo "... std_srvs_generate_messages_cpp"
+	@echo "... proj2_pkg_genpy"
+	@echo "... std_srvs_generate_messages_py"
+	@echo "... test"
+	@echo "... edit_cache"
+	@echo "... rebuild_cache"
+	@echo "... list_install_components"
+	@echo "... turtlesim_generate_messages_eus"
+	@echo "... install"
 .PHONY : help
 
 

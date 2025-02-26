@@ -264,7 +264,14 @@ class BicycleConfigurationSpace(ConfigurationSpace):
         """
         c1 and c2 should be numpy.ndarrays of size (4,)
         """
-        pass
+        x1, y1, theta1, _1 = c1 
+        x2, y2, theta2, _2 = c2
+        
+        euclidean_distance = np.sqrt((x2-x1) ** 2 + (y2-y1) ** 2)
+
+        angular_distance = min(abs(theta2 - theta1), (2 * np.pi) - abs(theta2-theta1))
+
+        return euclidean_distance + 0.5 * angular_distance
 
     def sample_config(self, *args):
         """
@@ -275,14 +282,52 @@ class BicycleConfigurationSpace(ConfigurationSpace):
         RRT implementation passes in the goal as an additional argument,
         which can be used to implement a goal-biasing heuristic.
         """
-        pass
+
+        goal = args[0] if len(args) > 0 else None
+
+        prob = np.random.rand() 
+
+
+        goal_bias_prob = 0.2
+
+        if goal is not None and prob < goal_bias_prob:
+            return np.array(goal)
+
+
+        x = np.random.uniform(self.input_low_lims[0], self.input_high_lims[0])
+        y = np.random.uniform(self.input_low_lims[1], self.input_high_lims[1])
+        theta = np.random.uniform(self.input_low_lims[2], self.input_high_lims[2])
+        phi = np.random.uniform(self.input_low_lims[3], self.input_high_lims[3])
+
+        return np.array([x, y, theta, phi])
 
     def check_collision(self, c):
         """
         Returns true if a configuration c is in collision
         c should be a numpy.ndarray of size (4,)
         """
-        pass
+
+        """
+        The configuration space for a Bicycle modeled robot
+        Obstacles should be tuples (x, y, r), representing circles of 
+        radius r centered at (x, y)
+        We assume that the robot is circular and has radius equal to robot_radius
+        The state of the robot is defined as (x, y, theta, phi).
+        """
+        obstacles = self.obstacles
+
+        current_x, current_y, _, _2 = c
+
+        buffer = 0.1
+
+        for x,y,r in obstacles:
+            distance = np.sqrt((x-current_x) ** 2 + (y-current_y) ** 2)
+
+            if distance <= r + self.robot_radius + buffer:
+                return True
+
+        return False
+
 
     def check_path_collision(self, path):
         """
@@ -293,42 +338,121 @@ class BicycleConfigurationSpace(ConfigurationSpace):
         You should also ensure that the path does not exceed any state bounds,
         and the open loop inputs don't exceed input bounds.
         """
-        pass
+        for i in range(path.positions.shape[0]):  
+            state = path.positions[i]  
+            inputs = path.open_loop_inputs[i]  
+
+            x, y, theta, phi = state
+            u1, u2 = inputs
+            
+ 
+            if not (self.input_low_lims[0] <= x <= self.input_high_lims[0] and
+                    self.input_low_lims[1] <= y <= self.input_high_lims[1] and
+                    self.input_low_lims[2] <= theta <= self.input_high_lims[2] and
+                    self.input_low_lims[3] <= phi <= self.input_high_lims[3]):
+                return True  
+
+
+            if not (self.input_low_lims[4] <= u1 <= self.input_high_lims[4] and
+                    self.input_low_lims[5] <= u2 <= self.input_high_lims[5]):
+                return True  
+
+            if check_collision(state):
+                return True
+            
+
+        return False  
+
+
 
     def local_plan(self, c1, c2, dt=0.01):
         """
-        Constructs a local plan from c1 to c2. Usually, you want to
-        just come up with any plan without worrying about obstacles,
-        because the algorithm checks to see if the path is in collision,
-        in which case it is discarded.
+        Constructs a local plan from c1 to c2 for a bicycle model by enumerating 
+        a set of motion primitives and picking the one that ends closest to c2.
 
-        However, in the case of the nonholonomic bicycle model, it will
-        be very difficult for you to come up with a complete plan from c1
-        to c2. Instead, you should choose a set of "motion-primitives", and
-        then simply return whichever motion primitive brings you closest to c2.
+        Args:
+            c1 (np.ndarray): Start state (x, y, theta, phi), shape (4,).
+            c2 (np.ndarray): Target state (x, y, theta, phi), shape (4,).
+            dt (float): Time step for simulating the primitive.
 
-        A motion primitive is just some small, local motion, that we can perform
-        starting at c1. If we keep a set of these, we can choose whichever one
-        brings us closest to c2.
-
-        Keep in mind that choosing this set of motion primitives is tricky.
-        Every plan we come up with will just be a bunch of these motion primitives
-        chained together, so in order to get a complete motion planner, you need to 
-        ensure that your set of motion primitives is such that you can get from any
-        point to any other point using those motions.
-
-        For example, in cartesian space, a set of motion primitives could be 
-        {a1*x, a2*y, a3*z} where a1*x means moving a1 units in the x direction and
-        so on. By varying a1, a2, a3, we get our set of primitives, and as you can
-        see this set of primitives is rich enough that we can, indeed, get from any
-        point in cartesian space to any other point by chaining together a bunch
-        of these primitives. Then, this local planner would just amount to picking 
-        the values of a1, a2, a3 that bring us closest to c2.
-
-        You should spend some time thinking about what motion primitives would
-        be good to use for a bicycle model robot. What kinds of motions are at
-        our disposal?
-
-        This should return a cofiguration_space.Plan object.
+        Returns:
+            Plan: The best local Plan found, as a trajectory of states + open_loop_inputs.
         """
-        pass
+
+
+        T = 1.0  
+        n_steps = int(np.round(T / dt)) + 1
+        times = np.linspace(0, T, n_steps)
+
+
+        speeds = [ -1.0, -0.5,  0.5, 1.0 ]        
+        steering_angles = [ -0.6, -0.3, 0.0, 0.3, 0.6 ] 
+
+
+        best_plan = None
+        best_dist = float("inf")
+
+
+
+        for v in speeds:
+            for phi_cmd in steering_angles:
+
+                states, inputs = self.simulate_primitive(c1, v, phi_cmd, times, dt)
+
+
+                final_state = states[-1]
+
+
+                dist_to_target = self.distance(final_state, c2)
+
+
+                if dist_to_target < best_dist:
+                    best_dist = dist_to_target
+                    best_plan = Plan(times, states, inputs, dt=dt)
+
+        return best_plan
+
+    def simulate_primitive(self, start_state, v, phi_cmd, times, dt):
+        """
+        Simulates the bicycle from `start_state` for the given `times`
+        using constant speed v and a constant steering angle phi_cmd.
+        Returns arrays for positions (N,4) and inputs (N,2).
+        """
+
+
+        L = self.robot_length
+
+
+
+        positions = []
+        open_loop_inputs = []
+
+
+
+        state = np.array(start_state, dtype=float)
+
+        for t in times:
+
+            positions.append(state.copy())
+            open_loop_inputs.append([v, phi_cmd])
+
+
+            x, y, theta, phi = state
+
+            next_phi = phi_cmd
+
+
+            dx = v * np.cos(theta)
+            dy = v * np.sin(theta)
+            dtheta = (v / L) * np.tan(phi)  
+
+
+            x_new     = x + dx * dt
+            y_new     = y + dy * dt
+            theta_new = theta + dtheta * dt
+
+ 
+            state = np.array([x_new, y_new, theta_new, next_phi])
+
+        return np.array(positions), np.array(open_loop_inputs)
+

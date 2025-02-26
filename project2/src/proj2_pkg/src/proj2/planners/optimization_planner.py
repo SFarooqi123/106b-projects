@@ -39,7 +39,7 @@ class OptimizationPlanner(object):
 
         # Expand obstacles to account for the radius of the robot.
         with expanded_obstacles(self.config_space.obstacles, self.config_space.robot_radius + 0.05):
-
+            print("a")
             self.plan = None
 
             q_opt, u_opt = plan_to_pose(np.array(start), np.array(goal), 
@@ -104,7 +104,7 @@ def main():
     phi_max = 0.6
     u1_max = 2
     u2_max = 3
-    obstacles = [[6, 3.5, 1.5], [3.5, 6.5, 1]]
+    obstacles = [[3, 3, 1.5], [3.5, 6.5, 1]]
 
     config = BicycleConfigurationSpace( xy_low + [-1000, -phi_max],
                                         xy_high + [1000, phi_max],

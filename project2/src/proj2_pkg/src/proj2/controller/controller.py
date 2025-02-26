@@ -62,6 +62,7 @@ class BicycleModelController(object):
         Returns:
             None. It simply sends the computed command to the robot.
         """
+        print(self.state)
         self.cmd(open_loop_input)
 
 

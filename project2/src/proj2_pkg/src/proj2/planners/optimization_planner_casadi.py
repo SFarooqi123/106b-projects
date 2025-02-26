@@ -1,8 +1,9 @@
-from casadi import Opti, sin, cos, tan, vertcat, sqrt, sumsq
+from casadi import Opti, sin, cos, tan, vertcat
 
 
 import numpy as np
 import matplotlib.pyplot as plt
+import math
 
 
 def bicycle_robot_model(q, u, L=0.3, dt=0.01):
@@ -40,8 +41,12 @@ def bicycle_robot_model(q, u, L=0.3, dt=0.01):
         # OR
         q = vcat([x + y, y, z]) # makes a 3x1 matrix with entries x + y, y, and z.
     """
-    x, y, theta, phi = q
-    vel, steerVel = u
+    x = q[0]
+    y = q[1]
+    theta = q[2]
+    phi = q[3]
+    vel = u[0]
+    steerVel = u[1]
 
 
     xDot = vel*cos(theta)
@@ -222,7 +227,7 @@ def constraints(q, u, q_lb, q_ub, u_lb, u_ub, obs_list, q_start, q_goal, L=0.3, 
         q_t   = q[:, t]
         q_tp1 = q[:, t + 1]
         u_t   = u[:, t]
-        constraints.append(bicycle_robot_model(q_t, u_t) == q_tp1) # You should use the bicycle_robot_model function here somehow.
+        constraints.append(bicycle_robot_model(q_t, u_t) <= q_tp1) # You should use the bicycle_robot_model function here somehow.
 
 
     # Obstacle constraints
@@ -233,19 +238,22 @@ def constraints(q, u, q_lb, q_ub, u_lb, u_ub, obs_list, q_start, q_goal, L=0.3, 
         #OBJECT BUFFER
         obj_r += .1
 
-
         for t in range(q.shape[1]):
-            dist = sqrt(sumsq(q[0, t] - q[1, t]))
-            constraints.append(obj_r <= dist) # Define the obstacle constraints.
+            
+            constraints.append(obj_r <= (obj_x - q[0, t]))
+            constraints.append(obj_r <= (obj_x + q[0, t])) # Define the obstacle constraints.
+            constraints.append(obj_r <= (obj_y - q[1, t]))
+            constraints.append(obj_r <= (obj_y + q[1, t]))
 
 
     # Initial and final state constraints
     constraints.append(q[:, 0] == q_start) # Constraint on start state.
-    constraints.append(q[:, -1]) # Constraint on final state.
-
+    constraints.append(q[:, -1] == q_goal) # Constraint on final state.
 
     return constraints
 
+def dist(x, y):
+    return sqrt(x^2 + y^2)
 
 def plan_to_pose(q_start, q_goal, q_lb, q_ub, u_lb, u_ub, obs_list, L=0.3, n=1000, dt=0.01):
     """
@@ -276,7 +284,7 @@ def plan_to_pose(q_start, q_goal, q_lb, q_ub, u_lb, u_ub, obs_list, L=0.3, n=100
 
 
     q0, u0 = initial_cond(q_start, q_goal, n)
-
+    
 
     obj = objective_func(q, u, q_goal, Q, R, P)
 
@@ -298,7 +306,7 @@ def plan_to_pose(q_start, q_goal, q_lb, q_ub, u_lb, u_ub, obs_list, L=0.3, n=100
     p_opts = {"expand": False}
     s_opts = {"max_iter": 1e4}
 
-
+    print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaa")
     opti.solver('ipopt', p_opts, s_opts)
     sol = opti.solve()
 
@@ -374,7 +382,7 @@ def main():
     phi_max = 0.6
     u1_max = 2
     u2_max = 3
-    obs_list = [[5, 5, 1], [-3, 4, 1], [4, 2, 2]]
+    obs_list = [[3, 3, 1], [-3, 4, 1], [4, 2, 2]]
     q_start = np.array([0, 0, 0, 0])
     q_goal = np.array([7, 3, 0, 0])
 
