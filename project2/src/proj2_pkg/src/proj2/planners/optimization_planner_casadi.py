@@ -1,9 +1,9 @@
-from casadi import Opti, sin, cos, tan, vertcat
+from casadi import Opti, sin, cos, tan, vertcat, sqrt
 
 
 import numpy as np
 import matplotlib.pyplot as plt
-import math
+import math as mt
 
 
 def bicycle_robot_model(q, u, L=0.3, dt=0.01):
@@ -236,14 +236,13 @@ def constraints(q, u, q_lb, q_ub, u_lb, u_ub, obs_list, q_start, q_goal, L=0.3, 
 
 
         #OBJECT BUFFER
-        obj_r += .1
+        obj_r += .18
 
         for t in range(q.shape[1]):
-            
-            constraints.append(obj_r <= (obj_x - q[0, t]))
-            constraints.append(obj_r <= (obj_x + q[0, t])) # Define the obstacle constraints.
-            constraints.append(obj_r <= (obj_y - q[1, t]))
-            constraints.append(obj_r <= (obj_y + q[1, t]))
+            a = (obj_x - q[0,t])**2
+            b = (obj_y - q[1,t])**2
+            constraints.append(obj_r <= sqrt(a + b))
+
 
 
     # Initial and final state constraints
@@ -252,8 +251,11 @@ def constraints(q, u, q_lb, q_ub, u_lb, u_ub, obs_list, q_start, q_goal, L=0.3, 
 
     return constraints
 
-def dist(x, y):
-    return sqrt(x^2 + y^2)
+def sqrtEstimate(x):
+    i = 0
+    while i*i < x:
+        i += .0001
+    return i
 
 def plan_to_pose(q_start, q_goal, q_lb, q_ub, u_lb, u_ub, obs_list, L=0.3, n=1000, dt=0.01):
     """
