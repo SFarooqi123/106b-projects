@@ -177,7 +177,18 @@ class SinusoidPlanner():
         :obj: Plan
             See configuration_space.Plan.
         """
-        pass
+        start_state_v = self.state2v(start_state)
+        goal_state_v = self.state2v(goal_state)
+        delta_phi = goal_state_v[3] - start_state_v[3]
+
+        v1 = 0
+        v2 = delta_phi/delta_t
+
+        path, t = [], t0
+        while t < t0 + delta_t:
+            path.append([t, v1, v2])
+            t = t + dt
+        return self.v_path_to_u_path(path, start_state, dt)
 
     def steer_alpha(self, start_state, goal_state, t0 = 0, dt = 0.01, delta_t = 2):
         """
@@ -253,7 +264,57 @@ class SinusoidPlanner():
         :obj: Plan
             See configuration_space.Plan.
         """
-        pass
+
+        start_state_v = self.state2v(start_state)
+        goal_state_v = self.state2v(goal_state)
+        delta_y = goal_state_v[1] - start_state_v[1]
+
+        omega = 2*np.pi / delta_t
+
+        a2 = list(range(0,51))
+        low = min(a2)
+        high = max(a2)
+        a1 = (low+high)/2
+
+        a2_min = low
+
+        f = lambda phi: (1/self.l)*np.tan(phi) # This is from the car model
+        g= lambda alpha: alpha/(sqrt(1-alpha**2)) #also from car model
+        phi_fn = lambda t: (a2_min/(2*omega))*np.sin(2*omega*t) + start_state_v[1] #phi func going in f
+        f_int = lambda t: f(phi_fn(t))*a1*np.sin(omega*t) # f func being integrated
+        alpha_fn = lambda t: quad(f_int,0,delta_t) + start_state_v[2]
+        g_int = lambda t: g(alpha_fn(t))*np.sin(omega*t) # The integrand to find beta
+        
+        errorFlag = False
+        
+
+
+        while not errorFlag: # binary search alg
+            try:
+                a1 = (low+high)/2
+                beta1 = (omega/np.pi) * quad(g_int, 0, delta_t)[0]
+                guess = a1*(np.pi/omega)*beta1
+                error = sqrt(((delta_y - guess)**2)/(delta_y**2))
+                threshold = 0.05
+                if error < threshold:
+                    break
+                elif guess < delta_y:
+                    low = a1
+                elif guess > delta_y:
+                    high = a1
+            except Exception as e:
+                print(f"Error: {e}")
+                break
+        v1 = lambda t: a1*np.sin(omega*(t))
+        v2 = lambda t: a2_min*np.cos(omega*(t))
+
+        path, t = [], t0
+        while t < t0 + delta_t:
+            path.append([t, v1(t-t0), v2(t-t0)])
+            t = t + dt
+        return self.v_path_to_u_path(path, start_state, dt)
+        
+
 
     def state2v(self, state):
         """

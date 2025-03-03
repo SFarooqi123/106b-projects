@@ -1,8 +1,8 @@
-# Install script for directory: /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_simulator
+# Install script for directory: /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_simulator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/install")
+  set(CMAKE_INSTALL_PREFIX "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,6 +38,6 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stdr_simulator" TYPE FILE FILES "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_simulator/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stdr_simulator" TYPE FILE FILES "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_simulator/package.xml")
 endif()
 

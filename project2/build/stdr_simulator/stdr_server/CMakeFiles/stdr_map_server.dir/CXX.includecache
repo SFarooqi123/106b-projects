@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/map_loader.h
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/map_loader.h
 stdio.h
 -
 stdlib.h
@@ -18,29 +18,29 @@ fstream
 string
 -
 ros/ros.h
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/ros/ros.h
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/ros/ros.h
 map_server/image_loader.h
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/map_server/image_loader.h
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/map_server/image_loader.h
 nav_msgs/MapMetaData.h
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/nav_msgs/MapMetaData.h
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/nav_msgs/MapMetaData.h
 yaml-cpp/yaml.h
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/yaml-cpp/yaml.h
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/yaml-cpp/yaml.h
 
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/map_server.h
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/map_server.h
 ros/ros.h
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/ros/ros.h
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/ros/ros.h
 tf/tf.h
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/tf/tf.h
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/tf/tf.h
 tf/transform_broadcaster.h
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/tf/transform_broadcaster.h
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/tf/transform_broadcaster.h
 nav_msgs/MapMetaData.h
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/nav_msgs/MapMetaData.h
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/nav_msgs/MapMetaData.h
 nav_msgs/OccupancyGrid.h
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/nav_msgs/OccupancyGrid.h
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/nav_msgs/OccupancyGrid.h
 stdr_server/map_loader.h
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/stdr_server/map_loader.h
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_server/include/stdr_server/stdr_server/map_loader.h
 
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_server/src/map_server.cpp
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_server/src/map_server.cpp
 stdr_server/map_server.h
 -
 

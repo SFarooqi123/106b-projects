@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/libstdr_map_server.pdb"
-  "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/libstdr_map_server.so"
+  "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/libstdr_map_server.pdb"
+  "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/libstdr_map_server.so"
   "CMakeFiles/stdr_map_server.dir/src/map_server.cpp.o"
 )
 

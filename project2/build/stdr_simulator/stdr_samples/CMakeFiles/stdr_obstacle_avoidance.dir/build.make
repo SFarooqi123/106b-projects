@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src
+CMAKE_SOURCE_DIR = /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build
+CMAKE_BINARY_DIR = /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build
 
 # Include any dependencies generated for this target.
 include stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/depend.make
@@ -58,30 +58,30 @@ include stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/progr
 include stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/flags.make
 
 stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.o: stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/flags.make
-stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.o: /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_samples/src/obstacle_avoidance/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.o"
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/stdr_simulator/stdr_samples && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.o -c /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_samples/src/obstacle_avoidance/main.cpp
+stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.o: /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_samples/src/obstacle_avoidance/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.o"
+	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/stdr_simulator/stdr_samples && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.o -c /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_samples/src/obstacle_avoidance/main.cpp
 
 stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.i"
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/stdr_simulator/stdr_samples && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_samples/src/obstacle_avoidance/main.cpp > CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.i
+	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/stdr_simulator/stdr_samples && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_samples/src/obstacle_avoidance/main.cpp > CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.i
 
 stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.s"
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/stdr_simulator/stdr_samples && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_samples/src/obstacle_avoidance/main.cpp -o CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.s
+	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/stdr_simulator/stdr_samples && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_samples/src/obstacle_avoidance/main.cpp -o CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.s
 
 stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.o: stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/flags.make
-stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.o: /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_samples/src/obstacle_avoidance/obstacle_avoidance.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.o"
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/stdr_simulator/stdr_samples && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.o -c /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_samples/src/obstacle_avoidance/obstacle_avoidance.cpp
+stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.o: /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_samples/src/obstacle_avoidance/obstacle_avoidance.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.o"
+	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/stdr_simulator/stdr_samples && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.o -c /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_samples/src/obstacle_avoidance/obstacle_avoidance.cpp
 
 stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.i"
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/stdr_simulator/stdr_samples && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_samples/src/obstacle_avoidance/obstacle_avoidance.cpp > CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.i
+	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/stdr_simulator/stdr_samples && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_samples/src/obstacle_avoidance/obstacle_avoidance.cpp > CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.i
 
 stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.s"
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/stdr_simulator/stdr_samples && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_samples/src/obstacle_avoidance/obstacle_avoidance.cpp -o CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.s
+	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/stdr_simulator/stdr_samples && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_samples/src/obstacle_avoidance/obstacle_avoidance.cpp -o CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.s
 
 # Object files for target stdr_obstacle_avoidance
 stdr_obstacle_avoidance_OBJECTS = \
@@ -91,50 +91,50 @@ stdr_obstacle_avoidance_OBJECTS = \
 # External object files for target stdr_obstacle_avoidance
 stdr_obstacle_avoidance_EXTERNAL_OBJECTS =
 
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.o
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.o
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build.make
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/libroslib.so
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/librospack.so
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libpython3.8.so
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/libtf.so
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/libtf2_ros.so
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/libactionlib.so
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/libmessage_filters.so
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/libroscpp.so
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/libxmlrpcpp.so
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/libtf2.so
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/librosconsole.so
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/librosconsole_log4cxx.so
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/librosconsole_backend_interface.so
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/libroscpp_serialization.so
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/librostime.so
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/libcpp_common.so
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance"
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/stdr_simulator/stdr_samples && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/stdr_obstacle_avoidance.dir/link.txt --verbose=$(VERBOSE)
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.o
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.o
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build.make
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/libroslib.so
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/librospack.so
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libpython3.8.so
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/libtf.so
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/libtf2_ros.so
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/libactionlib.so
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/libmessage_filters.so
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/libroscpp.so
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/libxmlrpcpp.so
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/libtf2.so
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/librosconsole.so
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/librosconsole_log4cxx.so
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/librosconsole_backend_interface.so
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/libroscpp_serialization.so
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/librostime.so
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /opt/ros/noetic/lib/libcpp_common.so
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance: stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance"
+	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/stdr_simulator/stdr_samples && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/stdr_obstacle_avoidance.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build: /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance
+stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build: /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_samples/stdr_obstacle_avoidance
 
 .PHONY : stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/build
 
 stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/clean:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/stdr_simulator/stdr_samples && $(CMAKE_COMMAND) -P CMakeFiles/stdr_obstacle_avoidance.dir/cmake_clean.cmake
+	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/stdr_simulator/stdr_samples && $(CMAKE_COMMAND) -P CMakeFiles/stdr_obstacle_avoidance.dir/cmake_clean.cmake
 .PHONY : stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/clean
 
 stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/depend:
-	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_samples /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/stdr_simulator/stdr_samples /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_samples /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/stdr_simulator/stdr_samples /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/depend
 

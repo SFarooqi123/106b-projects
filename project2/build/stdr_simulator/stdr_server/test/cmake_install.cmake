@@ -1,8 +1,8 @@
-# Install script for directory: /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_server/test
+# Install script for directory: /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_server/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/install")
+  set(CMAKE_INSTALL_PREFIX "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

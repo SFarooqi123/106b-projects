@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/KinematicMsg.h
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/KinematicMsg.h
 string
 -
 vector
@@ -22,11 +22,11 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_robot/include/stdr_robot/motion/ideal_motion_controller.h
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_robot/include/stdr_robot/motion/ideal_motion_controller.h
 stdr_robot/motion/motion_controller_base.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_robot/include/stdr_robot/motion/motion_controller_base.h
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_robot/include/stdr_robot/motion/motion_controller_base.h
 ros/ros.h
 -
 tf/transform_broadcaster.h
@@ -40,7 +40,7 @@ stdr_msgs/KinematicMsg.h
 ctime
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_robot/src/motion/ideal_motion_controller.cpp
+/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_robot/src/motion/ideal_motion_controller.cpp
 stdr_robot/motion/ideal_motion_controller.h
 -
 
