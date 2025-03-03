@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_samples/src/obstacle_avoidance/main.cpp" "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.o"
-  "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_samples/src/obstacle_avoidance/obstacle_avoidance.cpp" "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.o"
+  "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_samples/src/obstacle_avoidance/main.cpp" "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/main.cpp.o"
+  "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_samples/src/obstacle_avoidance/obstacle_avoidance.cpp" "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/stdr_simulator/stdr_samples/CMakeFiles/stdr_obstacle_avoidance.dir/src/obstacle_avoidance/obstacle_avoidance.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -18,8 +18,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_samples/include"
-  "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include"
+  "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_samples/include"
+  "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include"
   "/opt/ros/noetic/include"
   "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )

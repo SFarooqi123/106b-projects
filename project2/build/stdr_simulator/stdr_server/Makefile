@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src
+CMAKE_SOURCE_DIR = /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build
+CMAKE_BINARY_DIR = /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,14 +137,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/CMakeFiles /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/stdr_simulator/stdr_server/CMakeFiles/progress.marks
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/CMakeFiles 0
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/CMakeFiles /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/stdr_simulator/stdr_server/CMakeFiles/progress.marks
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/clean
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,22 +154,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/preinstall
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/preinstall
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
 .PHONY : stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -179,12 +179,12 @@ visualization_msgs_generate_messages_cpp: stdr_simulator/stdr_server/CMakeFiles/
 
 # fast build rule for target.
 visualization_msgs_generate_messages_cpp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build
 .PHONY : visualization_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
 .PHONY : stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -194,12 +194,12 @@ visualization_msgs_generate_messages_lisp: stdr_simulator/stdr_server/CMakeFiles
 
 # fast build rule for target.
 visualization_msgs_generate_messages_lisp/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
 .PHONY : visualization_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
 .PHONY : stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -209,12 +209,12 @@ visualization_msgs_generate_messages_eus: stdr_simulator/stdr_server/CMakeFiles/
 
 # fast build rule for target.
 visualization_msgs_generate_messages_eus/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build.make stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build.make stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build
 .PHONY : visualization_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
 .PHONY : stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -224,12 +224,12 @@ visualization_msgs_generate_messages_nodejs: stdr_simulator/stdr_server/CMakeFil
 
 # fast build rule for target.
 visualization_msgs_generate_messages_nodejs/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build.make stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build.make stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build
 .PHONY : visualization_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
 .PHONY : stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -239,12 +239,12 @@ visualization_msgs_generate_messages_py: stdr_simulator/stdr_server/CMakeFiles/v
 
 # fast build rule for target.
 visualization_msgs_generate_messages_py/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_py.dir/build
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make stdr_simulator/stdr_server/CMakeFiles/visualization_msgs_generate_messages_py.dir/build
 .PHONY : visualization_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 stdr_simulator/stdr_server/CMakeFiles/load_map.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/CMakeFiles/load_map.dir/rule
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/CMakeFiles/load_map.dir/rule
 .PHONY : stdr_simulator/stdr_server/CMakeFiles/load_map.dir/rule
 
 # Convenience name for target.
@@ -254,12 +254,12 @@ load_map: stdr_simulator/stdr_server/CMakeFiles/load_map.dir/rule
 
 # fast build rule for target.
 load_map/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/load_map.dir/build.make stdr_simulator/stdr_server/CMakeFiles/load_map.dir/build
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/load_map.dir/build.make stdr_simulator/stdr_server/CMakeFiles/load_map.dir/build
 .PHONY : load_map/fast
 
 # Convenience name for target.
 stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/rule
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/rule
 .PHONY : stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/rule
 
 # Convenience name for target.
@@ -269,12 +269,12 @@ stdr_map_loader: stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/rule
 
 # fast build rule for target.
 stdr_map_loader/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/build
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/build
 .PHONY : stdr_map_loader/fast
 
 # Convenience name for target.
 stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/rule
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/rule
 .PHONY : stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/rule
 
 # Convenience name for target.
@@ -284,12 +284,12 @@ stdr_map_server: stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/rule
 
 # fast build rule for target.
 stdr_map_server/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/build
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/build
 .PHONY : stdr_map_server/fast
 
 # Convenience name for target.
 stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/rule
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/rule
 .PHONY : stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/rule
 
 # Convenience name for target.
@@ -299,12 +299,12 @@ stdr_server: stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/rule
 
 # fast build rule for target.
 stdr_server/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/build
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/build
 .PHONY : stdr_server/fast
 
 # Convenience name for target.
 stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/rule:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/rule
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f CMakeFiles/Makefile2 stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/rule
 .PHONY : stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/rule
 
 # Convenience name for target.
@@ -314,7 +314,7 @@ stdr_server_node: stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/rul
 
 # fast build rule for target.
 stdr_server_node/fast:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/build
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/build
 .PHONY : stdr_server_node/fast
 
 src/map_loader.o: src/map_loader.cpp.o
@@ -323,7 +323,7 @@ src/map_loader.o: src/map_loader.cpp.o
 
 # target to build an object file
 src/map_loader.cpp.o:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/src/map_loader.cpp.o
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/src/map_loader.cpp.o
 .PHONY : src/map_loader.cpp.o
 
 src/map_loader.i: src/map_loader.cpp.i
@@ -332,7 +332,7 @@ src/map_loader.i: src/map_loader.cpp.i
 
 # target to preprocess a source file
 src/map_loader.cpp.i:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/src/map_loader.cpp.i
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/src/map_loader.cpp.i
 .PHONY : src/map_loader.cpp.i
 
 src/map_loader.s: src/map_loader.cpp.s
@@ -341,7 +341,7 @@ src/map_loader.s: src/map_loader.cpp.s
 
 # target to generate assembly for a file
 src/map_loader.cpp.s:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/src/map_loader.cpp.s
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_map_loader.dir/src/map_loader.cpp.s
 .PHONY : src/map_loader.cpp.s
 
 src/map_loader_node.o: src/map_loader_node.cpp.o
@@ -350,7 +350,7 @@ src/map_loader_node.o: src/map_loader_node.cpp.o
 
 # target to build an object file
 src/map_loader_node.cpp.o:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/load_map.dir/build.make stdr_simulator/stdr_server/CMakeFiles/load_map.dir/src/map_loader_node.cpp.o
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/load_map.dir/build.make stdr_simulator/stdr_server/CMakeFiles/load_map.dir/src/map_loader_node.cpp.o
 .PHONY : src/map_loader_node.cpp.o
 
 src/map_loader_node.i: src/map_loader_node.cpp.i
@@ -359,7 +359,7 @@ src/map_loader_node.i: src/map_loader_node.cpp.i
 
 # target to preprocess a source file
 src/map_loader_node.cpp.i:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/load_map.dir/build.make stdr_simulator/stdr_server/CMakeFiles/load_map.dir/src/map_loader_node.cpp.i
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/load_map.dir/build.make stdr_simulator/stdr_server/CMakeFiles/load_map.dir/src/map_loader_node.cpp.i
 .PHONY : src/map_loader_node.cpp.i
 
 src/map_loader_node.s: src/map_loader_node.cpp.s
@@ -368,7 +368,7 @@ src/map_loader_node.s: src/map_loader_node.cpp.s
 
 # target to generate assembly for a file
 src/map_loader_node.cpp.s:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/load_map.dir/build.make stdr_simulator/stdr_server/CMakeFiles/load_map.dir/src/map_loader_node.cpp.s
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/load_map.dir/build.make stdr_simulator/stdr_server/CMakeFiles/load_map.dir/src/map_loader_node.cpp.s
 .PHONY : src/map_loader_node.cpp.s
 
 src/map_server.o: src/map_server.cpp.o
@@ -377,7 +377,7 @@ src/map_server.o: src/map_server.cpp.o
 
 # target to build an object file
 src/map_server.cpp.o:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/src/map_server.cpp.o
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/src/map_server.cpp.o
 .PHONY : src/map_server.cpp.o
 
 src/map_server.i: src/map_server.cpp.i
@@ -386,7 +386,7 @@ src/map_server.i: src/map_server.cpp.i
 
 # target to preprocess a source file
 src/map_server.cpp.i:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/src/map_server.cpp.i
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/src/map_server.cpp.i
 .PHONY : src/map_server.cpp.i
 
 src/map_server.s: src/map_server.cpp.s
@@ -395,7 +395,7 @@ src/map_server.s: src/map_server.cpp.s
 
 # target to generate assembly for a file
 src/map_server.cpp.s:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/src/map_server.cpp.s
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_map_server.dir/src/map_server.cpp.s
 .PHONY : src/map_server.cpp.s
 
 src/stdr_server.o: src/stdr_server.cpp.o
@@ -404,7 +404,7 @@ src/stdr_server.o: src/stdr_server.cpp.o
 
 # target to build an object file
 src/stdr_server.cpp.o:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/src/stdr_server.cpp.o
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/src/stdr_server.cpp.o
 .PHONY : src/stdr_server.cpp.o
 
 src/stdr_server.i: src/stdr_server.cpp.i
@@ -413,7 +413,7 @@ src/stdr_server.i: src/stdr_server.cpp.i
 
 # target to preprocess a source file
 src/stdr_server.cpp.i:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/src/stdr_server.cpp.i
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/src/stdr_server.cpp.i
 .PHONY : src/stdr_server.cpp.i
 
 src/stdr_server.s: src/stdr_server.cpp.s
@@ -422,7 +422,7 @@ src/stdr_server.s: src/stdr_server.cpp.s
 
 # target to generate assembly for a file
 src/stdr_server.cpp.s:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/src/stdr_server.cpp.s
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_server.dir/src/stdr_server.cpp.s
 .PHONY : src/stdr_server.cpp.s
 
 src/stdr_server_node.o: src/stdr_server_node.cpp.o
@@ -431,7 +431,7 @@ src/stdr_server_node.o: src/stdr_server_node.cpp.o
 
 # target to build an object file
 src/stdr_server_node.cpp.o:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/src/stdr_server_node.cpp.o
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/src/stdr_server_node.cpp.o
 .PHONY : src/stdr_server_node.cpp.o
 
 src/stdr_server_node.i: src/stdr_server_node.cpp.i
@@ -440,7 +440,7 @@ src/stdr_server_node.i: src/stdr_server_node.cpp.i
 
 # target to preprocess a source file
 src/stdr_server_node.cpp.i:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/src/stdr_server_node.cpp.i
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/src/stdr_server_node.cpp.i
 .PHONY : src/stdr_server_node.cpp.i
 
 src/stdr_server_node.s: src/stdr_server_node.cpp.s
@@ -449,7 +449,7 @@ src/stdr_server_node.s: src/stdr_server_node.cpp.s
 
 # target to generate assembly for a file
 src/stdr_server_node.cpp.s:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/src/stdr_server_node.cpp.s
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(MAKE) -f stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/build.make stdr_simulator/stdr_server/CMakeFiles/stdr_server_node.dir/src/stdr_server_node.cpp.s
 .PHONY : src/stdr_server_node.cpp.s
 
 # Help Target
@@ -501,6 +501,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

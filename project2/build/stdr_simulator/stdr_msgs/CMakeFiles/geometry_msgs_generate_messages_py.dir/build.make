@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src
+CMAKE_SOURCE_DIR = /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build
+CMAKE_BINARY_DIR = /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build
 
 # Utility rule file for geometry_msgs_generate_messages_py.
 
@@ -63,10 +63,10 @@ stdr_simulator/stdr_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
 .PHONY : stdr_simulator/stdr_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
 
 stdr_simulator/stdr_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/stdr_simulator/stdr_msgs && $(CMAKE_COMMAND) -P CMakeFiles/geometry_msgs_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/stdr_simulator/stdr_msgs && $(CMAKE_COMMAND) -P CMakeFiles/geometry_msgs_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : stdr_simulator/stdr_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
 
 stdr_simulator/stdr_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/depend:
-	cd /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_msgs /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/stdr_simulator/stdr_msgs /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/stdr_simulator/stdr_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_msgs /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/stdr_simulator/stdr_msgs /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/stdr_simulator/stdr_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : stdr_simulator/stdr_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/depend
 

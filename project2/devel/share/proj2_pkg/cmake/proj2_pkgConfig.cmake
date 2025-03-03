@@ -67,14 +67,14 @@ set(proj2_pkg_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(proj2_pkg_SOURCE_PREFIX /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/proj2_pkg)
-  set(proj2_pkg_DEVEL_PREFIX /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel)
+  set(proj2_pkg_SOURCE_PREFIX /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/proj2_pkg)
+  set(proj2_pkg_DEVEL_PREFIX /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel)
   set(proj2_pkg_INSTALL_PREFIX "")
   set(proj2_pkg_PREFIX ${proj2_pkg_DEVEL_PREFIX})
 else()
   set(proj2_pkg_SOURCE_PREFIX "")
   set(proj2_pkg_DEVEL_PREFIX "")
-  set(proj2_pkg_INSTALL_PREFIX /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/install)
+  set(proj2_pkg_INSTALL_PREFIX /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/install)
   set(proj2_pkg_PREFIX ${proj2_pkg_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(proj2_pkg_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include " STREQUAL " ")
+if(NOT "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include " STREQUAL " ")
   set(proj2_pkg_INCLUDE_DIRS "")
-  set(_include_dirs "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include")
+  set(_include_dirs "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/projec
         message(FATAL_ERROR "Project 'proj2_pkg' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'proj2_pkg' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/proj2_pkg/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'proj2_pkg' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/proj2_pkg/${idir}'.  ${_report}")
     endif()
     _list_append_unique(proj2_pkg_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib;/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib;/opt/ros/eecsbot_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

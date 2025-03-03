@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/CO2SensorMsg.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/CO2SensorMsg.h
 string
 -
 vector
@@ -24,7 +24,7 @@ ros/message_operations.h
 geometry_msgs/Pose2D.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/DeleteRobotAction.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/DeleteRobotAction.h
 string
 -
 vector
@@ -46,7 +46,7 @@ stdr_msgs/DeleteRobotActionResult.h
 stdr_msgs/DeleteRobotActionFeedback.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/DeleteRobotActionFeedback.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/DeleteRobotActionFeedback.h
 string
 -
 vector
@@ -68,7 +68,7 @@ actionlib_msgs/GoalStatus.h
 stdr_msgs/DeleteRobotFeedback.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/DeleteRobotActionGoal.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/DeleteRobotActionGoal.h
 string
 -
 vector
@@ -90,7 +90,7 @@ actionlib_msgs/GoalID.h
 stdr_msgs/DeleteRobotGoal.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/DeleteRobotActionResult.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/DeleteRobotActionResult.h
 string
 -
 vector
@@ -112,7 +112,7 @@ actionlib_msgs/GoalStatus.h
 stdr_msgs/DeleteRobotResult.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/DeleteRobotFeedback.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/DeleteRobotFeedback.h
 string
 -
 vector
@@ -128,7 +128,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/DeleteRobotGoal.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/DeleteRobotGoal.h
 string
 -
 vector
@@ -144,7 +144,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/DeleteRobotResult.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/DeleteRobotResult.h
 string
 -
 vector
@@ -160,7 +160,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/FootprintMsg.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/FootprintMsg.h
 string
 -
 vector
@@ -178,7 +178,7 @@ ros/message_operations.h
 geometry_msgs/Point.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/KinematicMsg.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/KinematicMsg.h
 string
 -
 vector
@@ -194,7 +194,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/LaserSensorMsg.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/LaserSensorMsg.h
 string
 -
 vector
@@ -214,7 +214,7 @@ stdr_msgs/Noise.h
 geometry_msgs/Pose2D.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/MoveRobot.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/MoveRobot.h
 ros/service_traits.h
 -
 stdr_msgs/MoveRobotRequest.h
@@ -222,7 +222,7 @@ stdr_msgs/MoveRobotRequest.h
 stdr_msgs/MoveRobotResponse.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/MoveRobotRequest.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/MoveRobotRequest.h
 string
 -
 vector
@@ -240,7 +240,7 @@ ros/message_operations.h
 geometry_msgs/Pose2D.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/MoveRobotResponse.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/MoveRobotResponse.h
 string
 -
 vector
@@ -256,7 +256,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/Noise.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/Noise.h
 string
 -
 vector
@@ -272,7 +272,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/RfidSensorMsg.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/RfidSensorMsg.h
 string
 -
 vector
@@ -290,7 +290,7 @@ ros/message_operations.h
 geometry_msgs/Pose2D.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/RobotIndexedMsg.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/RobotIndexedMsg.h
 string
 -
 vector
@@ -308,7 +308,7 @@ ros/message_operations.h
 stdr_msgs/RobotMsg.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/RobotMsg.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/RobotMsg.h
 string
 -
 vector
@@ -342,7 +342,7 @@ stdr_msgs/ThermalSensorMsg.h
 stdr_msgs/KinematicMsg.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/SonarSensorMsg.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/SonarSensorMsg.h
 string
 -
 vector
@@ -362,7 +362,7 @@ stdr_msgs/Noise.h
 geometry_msgs/Pose2D.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/SoundSensorMsg.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/SoundSensorMsg.h
 string
 -
 vector
@@ -380,7 +380,7 @@ ros/message_operations.h
 geometry_msgs/Pose2D.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/SpawnRobotAction.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/SpawnRobotAction.h
 string
 -
 vector
@@ -402,7 +402,7 @@ stdr_msgs/SpawnRobotActionResult.h
 stdr_msgs/SpawnRobotActionFeedback.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/SpawnRobotActionFeedback.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/SpawnRobotActionFeedback.h
 string
 -
 vector
@@ -424,7 +424,7 @@ actionlib_msgs/GoalStatus.h
 stdr_msgs/SpawnRobotFeedback.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/SpawnRobotActionGoal.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/SpawnRobotActionGoal.h
 string
 -
 vector
@@ -446,7 +446,7 @@ actionlib_msgs/GoalID.h
 stdr_msgs/SpawnRobotGoal.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/SpawnRobotActionResult.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/SpawnRobotActionResult.h
 string
 -
 vector
@@ -468,7 +468,7 @@ actionlib_msgs/GoalStatus.h
 stdr_msgs/SpawnRobotResult.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/SpawnRobotFeedback.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/SpawnRobotFeedback.h
 string
 -
 vector
@@ -484,7 +484,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/SpawnRobotGoal.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/SpawnRobotGoal.h
 string
 -
 vector
@@ -502,7 +502,7 @@ ros/message_operations.h
 stdr_msgs/RobotMsg.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/SpawnRobotResult.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/SpawnRobotResult.h
 string
 -
 vector
@@ -520,7 +520,7 @@ ros/message_operations.h
 stdr_msgs/RobotIndexedMsg.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/include/stdr_msgs/ThermalSensorMsg.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/include/stdr_msgs/ThermalSensorMsg.h
 string
 -
 vector
@@ -538,11 +538,11 @@ ros/message_operations.h
 geometry_msgs/Pose2D.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_robot/include/stdr_robot/exceptions.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_robot/include/stdr_robot/exceptions.h
 stdexcept
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_robot/include/stdr_robot/handle_robot.h
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_robot/include/stdr_robot/handle_robot.h
 ros/ros.h
 -
 actionlib/client/simple_action_client.h
@@ -562,7 +562,7 @@ stdr_robot/exceptions.h
 geometry_msgs/Pose2D.h
 -
 
-/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_robot/src/handle_robot.cpp
+/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_robot/src/handle_robot.cpp
 stdr_robot/handle_robot.h
 -
 

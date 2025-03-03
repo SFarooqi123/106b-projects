@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/libstdr_sensor_base.pdb"
-  "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/libstdr_sensor_base.so"
+  "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/libstdr_sensor_base.pdb"
+  "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/libstdr_sensor_base.so"
   "CMakeFiles/stdr_sensor_base.dir/src/sensors/sensor_base.cpp.o"
 )
 

@@ -67,14 +67,14 @@ set(stdr_robot_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(stdr_robot_SOURCE_PREFIX /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_robot)
-  set(stdr_robot_DEVEL_PREFIX /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel)
+  set(stdr_robot_SOURCE_PREFIX /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_robot)
+  set(stdr_robot_DEVEL_PREFIX /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel)
   set(stdr_robot_INSTALL_PREFIX "")
   set(stdr_robot_PREFIX ${stdr_robot_DEVEL_PREFIX})
 else()
   set(stdr_robot_SOURCE_PREFIX "")
   set(stdr_robot_DEVEL_PREFIX "")
-  set(stdr_robot_INSTALL_PREFIX /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/install)
+  set(stdr_robot_INSTALL_PREFIX /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/install)
   set(stdr_robot_PREFIX ${stdr_robot_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(stdr_robot_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_robot/include " STREQUAL " ")
+if(NOT "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_robot/include " STREQUAL " ")
   set(stdr_robot_INCLUDE_DIRS "")
-  set(_include_dirs "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_robot/include")
+  set(_include_dirs "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_robot/include")
   if(NOT "https://github.com/stdr-simulator-ros-pkg/stdr_simulator/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/stdr-simulator-ros-pkg/stdr_simulator/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://stdr-simulator-ros-pkg.github.io " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/projec
         message(FATAL_ERROR "Project 'stdr_robot' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'stdr_robot' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_robot/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'stdr_robot' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_robot/${idir}'.  ${_report}")
     endif()
     _list_append_unique(stdr_robot_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib;/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib;/opt/ros/eecsbot_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

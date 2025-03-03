@@ -1,8 +1,8 @@
-# Install script for directory: /home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_resources
+# Install script for directory: /home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_resources
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/install")
+  set(CMAKE_INSTALL_PREFIX "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,24 +38,24 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/stdr_simulator/stdr_resources/catkin_generated/installspace/stdr_resources.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/stdr_simulator/stdr_resources/catkin_generated/installspace/stdr_resources.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stdr_resources/cmake" TYPE FILE FILES
-    "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/stdr_simulator/stdr_resources/catkin_generated/installspace/stdr_resourcesConfig.cmake"
-    "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/build/stdr_simulator/stdr_resources/catkin_generated/installspace/stdr_resourcesConfig-version.cmake"
+    "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/stdr_simulator/stdr_resources/catkin_generated/installspace/stdr_resourcesConfig.cmake"
+    "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/build/stdr_simulator/stdr_resources/catkin_generated/installspace/stdr_resourcesConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stdr_resources" TYPE FILE FILES "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_resources/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stdr_resources" TYPE FILE FILES "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_resources/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stdr_resources" TYPE DIRECTORY FILES
-    "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_resources/maps"
-    "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/src/stdr_simulator/stdr_resources/resources"
+    "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_resources/maps"
+    "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/src/stdr_simulator/stdr_resources/resources"
     )
 endif()
 
