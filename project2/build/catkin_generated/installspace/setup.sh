@@ -11,7 +11,7 @@
 
 # since this file is sourced either use the provided _CATKIN_SETUP_DIR
 # or fall back to the destination set at configure time
-: ${_CATKIN_SETUP_DIR:=/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/install}
+: ${_CATKIN_SETUP_DIR:=/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/install}
 _SETUP_UTIL="$_CATKIN_SETUP_DIR/_setup_util.py"
 unset _CATKIN_SETUP_DIR
 

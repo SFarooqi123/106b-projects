@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_gui/stdr_gui_node"
-  "/home/cc/ee106b/sp25/class/ee106b-aap/106b_workspace/106b-projects/project2/devel/lib/stdr_gui/stdr_gui_node.pdb"
+  "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_gui/stdr_gui_node"
+  "/home/cc/ee106b/sp25/class/ee106b-aan/106b_projects/106b-projects/project2/devel/lib/stdr_gui/stdr_gui_node.pdb"
   "CMakeFiles/stdr_gui_node.dir/moc_stdr_gui_connector.cxx.o"
   "CMakeFiles/stdr_gui_node.dir/moc_stdr_gui_controller.cxx.o"
   "CMakeFiles/stdr_gui_node.dir/moc_stdr_info_connector.cxx.o"
