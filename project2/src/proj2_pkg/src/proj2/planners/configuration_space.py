@@ -288,16 +288,16 @@ class BicycleConfigurationSpace(ConfigurationSpace):
         prob = np.random.rand() 
 
 
-        goal_bias_prob = 0.2
+        goal_bias_prob = 0.6
 
         if goal is not None and prob < goal_bias_prob:
             return np.array(goal)
 
 
-        x = np.random.uniform(self.input_low_lims[0], self.input_high_lims[0])
-        y = np.random.uniform(self.input_low_lims[1], self.input_high_lims[1])
-        theta = np.random.uniform(self.input_low_lims[2], self.input_high_lims[2])
-        phi = np.random.uniform(self.input_low_lims[3], self.input_high_lims[3])
+        x = np.random.uniform(self.low_lims[0], self.high_lims[0])
+        y = np.random.uniform(self.low_lims[1], self.high_lims[1])
+        theta = np.random.uniform(self.low_lims[2], self.high_lims[2])
+        phi = np.random.uniform(self.low_lims[3], self.high_lims[3])
 
         return np.array([x, y, theta, phi])
 
@@ -346,18 +346,18 @@ class BicycleConfigurationSpace(ConfigurationSpace):
             u1, u2 = inputs
             
  
-            if not (self.input_low_lims[0] <= x <= self.input_high_lims[0] and
-                    self.input_low_lims[1] <= y <= self.input_high_lims[1] and
-                    self.input_low_lims[2] <= theta <= self.input_high_lims[2] and
-                    self.input_low_lims[3] <= phi <= self.input_high_lims[3]):
+            if not (self.low_lims[0] <= x <= self.high_lims[0] and
+                    self.low_lims[1] <= y <= self.high_lims[1] and
+                    self.low_lims[2] <= theta <= self.high_lims[2] and
+                    self.low_lims[3] <= phi <= self.high_lims[3]):
                 return True  
 
 
-            if not (self.input_low_lims[4] <= u1 <= self.input_high_lims[4] and
-                    self.input_low_lims[5] <= u2 <= self.input_high_lims[5]):
+            if not (self.input_low_lims[0] <= u1 <= self.input_high_lims[0] and
+                    self.input_low_lims[1] <= u2 <= self.input_high_lims[1]):
                 return True  
 
-            if check_collision(state):
+            if self.check_collision(state):
                 return True
             
 
@@ -367,50 +367,40 @@ class BicycleConfigurationSpace(ConfigurationSpace):
 
     def local_plan(self, c1, c2, dt=0.01):
         """
-        Constructs a local plan from c1 to c2 for a bicycle model by enumerating 
-        a set of motion primitives and picking the one that ends closest to c2.
-
-        Args:
-            c1 (np.ndarray): Start state (x, y, theta, phi), shape (4,).
-            c2 (np.ndarray): Target state (x, y, theta, phi), shape (4,).
-            dt (float): Time step for simulating the primitive.
-
-        Returns:
-            Plan: The best local Plan found, as a trajectory of states + open_loop_inputs.
+        Constructs a local plan from c1 to c2 by enumerating motion primitives
+        that are dynamically feasible for a bicycle model.
         """
 
-
-        T = 1.0  
-        n_steps = int(np.round(T / dt)) + 1
+        # Increased horizon for better accuracy
+        T = 1.5  
+        n_steps = int(round(T / dt)) + 1
         times = np.linspace(0, T, n_steps)
 
-
-        speeds = [ -1.0, -0.5,  0.5, 1.0 ]        
-        steering_angles = [ -0.6, -0.3, 0.0, 0.3, 0.6 ] 
-
+        # Define a richer set of motion primitives to prevent loops
+        speeds = [-0.5, -0.3, -0.15, 0.15, 0.3, 0.5]
+        steering_angles = [-0.5, -0.3, 0, 0.3, 0.5]  
 
         best_plan = None
         best_dist = float("inf")
 
-
-
         for v in speeds:
             for phi_cmd in steering_angles:
-
                 states, inputs = self.simulate_primitive(c1, v, phi_cmd, times, dt)
-
-
                 final_state = states[-1]
 
-
+                # Proper SE(2) distance metric
                 dist_to_target = self.distance(final_state, c2)
 
-
+                # Ensure only progress-making moves are selected
                 if dist_to_target < best_dist:
                     best_dist = dist_to_target
                     best_plan = Plan(times, states, inputs, dt=dt)
 
         return best_plan
+
+
+
+
 
     def simulate_primitive(self, start_state, v, phi_cmd, times, dt):
         """

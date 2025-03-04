@@ -9,6 +9,7 @@ import sys
 
 import tf2_ros
 import tf
+from casadi import cos, sin, sign
 from std_srvs.srv import Empty as EmptySrv
 import rospy
 from proj2_pkg.msg import BicycleCommandMsg, BicycleStateMsg
@@ -62,8 +63,21 @@ class BicycleModelController(object):
         Returns:
             None. It simply sends the computed command to the robot.
         """
-        print(self.state)
-        self.cmd(open_loop_input)
+        x, y, theta, phi = self.state
+        x_d, y_d, theta_d, phi_d = target_position
+
+        ex = x - x_d
+        ey = y - y_d
+        etheta = theta - theta_d
+        ephi = phi - phi_d
+
+        #gain vals
+        k1, k2, k3 = .2, .1, .1
+
+        u1 = k1 * (ex * cos(theta) + ey * sin(theta))
+        u2 = k2 * etheta + k3 * ephi
+        self.cmd(open_loop_input + [u1, u2])
+        #self.cmd(open_loop_input)
 
 
     def cmd(self, msg):

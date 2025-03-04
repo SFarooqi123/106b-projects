@@ -1,9 +1,9 @@
-from casadi import Opti, sin, cos, tan, vertcat
+from casadi import Opti, sin, cos, tan, vertcat, sqrt, power, DM, norm_2
 
 
 import numpy as np
 import matplotlib.pyplot as plt
-import math
+import math as mt
 
 
 def bicycle_robot_model(q, u, L=0.3, dt=0.01):
@@ -53,7 +53,7 @@ def bicycle_robot_model(q, u, L=0.3, dt=0.01):
     yDot = vel*sin(theta)
 
 
-    thetaDot = (vel/L)*tan(theta)
+    thetaDot = (1/L)*tan(phi)
     phiDot = steerVel
 
 
@@ -222,28 +222,30 @@ def constraints(q, u, q_lb, q_ub, u_lb, u_ub, obs_list, q_start, q_goal, L=0.3, 
     constraints.extend([u_lb[1] <= u[1, :], u[1, :] <= u_ub[1]])
 
 
-    # Dynamics constraints
+    # Dynamics constraints 
     for t in range(q.shape[1] - 1):
         q_t   = q[:, t]
-        q_tp1 = q[:, t + 1]
         u_t   = u[:, t]
-        constraints.append(bicycle_robot_model(q_t, u_t) <= q_tp1) # You should use the bicycle_robot_model function here somehow.
+        q_tp1 = q[:, t + 1]
+        constraints.append(q_tp1 - bicycle_robot_model(q_t, u_t) == 0) # You should use the bicycle_robot_model function here somehow.
 
 
     # Obstacle constraints
+    
     for obj in obs_list:
         obj_x, obj_y, obj_r = obj
 
-
         #OBJECT BUFFER
-        obj_r += .1
+        
+        obj_r += .2
+
 
         for t in range(q.shape[1]):
-            
-            constraints.append(obj_r <= (obj_x - q[0, t]))
-            constraints.append(obj_r <= (obj_x + q[0, t])) # Define the obstacle constraints.
-            constraints.append(obj_r <= (obj_y - q[1, t]))
-            constraints.append(obj_r <= (obj_y + q[1, t]))
+            x_t = q[0, t]
+            y_t = q[1, t]
+            distSq = (x_t - obj_x)**2 + (y_t - obj_y)**2
+            constraints.append(obj_r**2 <= distSq)
+
 
 
     # Initial and final state constraints
@@ -252,8 +254,11 @@ def constraints(q, u, q_lb, q_ub, u_lb, u_ub, obs_list, q_start, q_goal, L=0.3, 
 
     return constraints
 
-def dist(x, y):
-    return sqrt(x^2 + y^2)
+def sqrtEstimate(x):
+    i = 0
+    while i*i < x:
+        i += .0001
+    return i
 
 def plan_to_pose(q_start, q_goal, q_lb, q_ub, u_lb, u_ub, obs_list, L=0.3, n=1000, dt=0.01):
     """
@@ -288,7 +293,6 @@ def plan_to_pose(q_start, q_goal, q_lb, q_ub, u_lb, u_ub, obs_list, L=0.3, n=100
 
     obj = objective_func(q, u, q_goal, Q, R, P)
 
-
     opti.minimize(obj)
 
 
@@ -301,10 +305,9 @@ def plan_to_pose(q_start, q_goal, q_lb, q_ub, u_lb, u_ub, obs_list, L=0.3, n=100
 
     ###### CONSTRUCT SOLVER AND SOLVE ######
 
-
     opti.solver('ipopt')
     p_opts = {"expand": False}
-    s_opts = {"max_iter": 1e4}
+    s_opts = {"max_iter": 1e3}
 
     print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaa")
     opti.solver('ipopt', p_opts, s_opts)
